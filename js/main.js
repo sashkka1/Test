@@ -82,13 +82,13 @@ window.onload = function () {
         const username = user.username || "Имя пользователя недоступно";
         document.getElementById('notificationp').innerText = `Привет: ${username}`;
     } else {
-        document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе1";
+        document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе2";
     }
     if (user.photo) {
         document.getElementById('notification-img').src = user.photo;
         document.getElementById('notification-img').style.display = 'block';
     } else {
-        document.getElementById('notificationpp').innerText = `url фото1 -  ${user.photo}`;
+        document.getElementById('notificationpp').innerText = `url фото2 -  ${document.getElementById('notification-img').src}`;
     }
 
 
