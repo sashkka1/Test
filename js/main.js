@@ -85,7 +85,7 @@ window.onload = function () {
         document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
     }
     if (user.photo) {
-        document.getElementById('userPhoto').src = user.photo;
+        document.getElementById('notification-img').src = user.photo;
     } else {
         document.getElementById('notificationpp').innerText = `url фото -  ${user.photo}`;
     }

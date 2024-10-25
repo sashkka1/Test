@@ -46,7 +46,7 @@ nav, footer,header, aside{display: block;}
     overflow: hidden;
     transition-duration: 0.3s;
 }
-#notificationimg{
+#notification-img{
     width: 30%;
     border-radius: 50%;
     z-index: 10;
