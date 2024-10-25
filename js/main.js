@@ -86,6 +86,7 @@ window.onload = function () {
     }
     if (user.photo) {
         document.getElementById('notification-img').src = user.photo;
+        document.getElementById('notification-img').style.display = 'block';
     } else {
         document.getElementById('notificationpp').innerText = `url фото1 -  ${user.photo}`;
     }
