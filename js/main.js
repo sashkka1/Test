@@ -82,12 +82,12 @@ window.onload = function () {
         const username = user.username || "Имя пользователя недоступно";
         document.getElementById('notificationp').innerText = `Привет: ${username}`;
     } else {
-        document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
+        document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе1";
     }
     if (user.photo) {
         document.getElementById('notification-img').src = user.photo;
     } else {
-        document.getElementById('notificationpp').innerText = `url фото -  ${user.photo}`;
+        document.getElementById('notificationpp').innerText = `url фото1 -  ${user.photo}`;
     }
 
 
