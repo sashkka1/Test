@@ -1,0 +1,137 @@
+a{
+    width: 0px;
+    height: 0px;
+}
+
+body{
+    padding-top:40px;
+    padding-bottom: 15px;
+}
+.main{
+    margin: auto;
+    background-color: rgb(240, 240, 240);
+    width: 700px;
+    height: 100%;
+    box-shadow: 0px 3px 10px  rgb(216, 216, 216);
+    border-radius: 5px;
+}
+p{
+    color: rgb(23, 139, 189);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.header{
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 105px;
+    align-items: center;
+}
+.header a{
+    width: 45px;
+    height: 45px;
+    margin: 30px 0px 30px 30px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 4px  rgb(92, 92, 92);
+    background-color: rgb(28, 170, 231);
+}
+.header img{ 
+    height: 45px;
+}
+.score{
+    margin: 0px 30px 0px 0px;
+}
+
+.example-block{
+    margin: 0 auto;
+    margin-top: 15vh;
+    text-align: center;
+}
+
+input{
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 1px 4px  rgb(92, 92, 92); 
+    border-radius: 5px;  
+    margin-top: 30px;
+    width: 200px;
+    height: 25px;
+}
+.inputAnswer{
+    margin: 0 auto;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0px 1px 4px  rgb(92, 92, 92); 
+    border-radius: 5px;  
+    margin-top: 30px;
+    width: 200px;
+    height: 25px;
+    color: black;
+}
+
+.keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 30vh;
+    bottom: 0px;
+    position: absolute;
+    bottom: 30px;
+}
+.keyboard button{
+    width: 30%;
+    height: 7vh;
+    display: flex;
+    text-align: center;
+    margin: 3px;
+}
+.keyboard .number p{
+    color: white;
+    /* font-size: 2vw; */
+}
+
+.keyboard img{
+    height: 4.5vh;
+}
+
+@media (min-width: 992px) {
+    p{
+        font-size: 3vw;
+    }
+}
+@media (max-width: 992px) {
+    .main{
+        width: 700px;
+    }
+    p{
+        font-size: 3vw;
+    }
+}
+@media (max-width: 767px) {
+    body{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .main{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+    p{
+        font-size: 5vw;
+    }
+    .keyboard{
+        width: 100%;
+    }
+}
+@media (max-width: 540px) {
+    p{
+        font-size: 8vw;
+    }
+    .inputAnswer{
+        height: 35px;
+    }
+}
+
+
