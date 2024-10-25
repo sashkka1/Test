@@ -88,7 +88,7 @@ window.onload = function () {
         document.getElementById('notification-img').src = user.photo;
         document.getElementById('notification-img').style.display = 'block';
     } else {
-        document.getElementById('notificationpp').innerText = `url фото2 -  ${user.photo}`;
+        document.getElementById('notificationpp').innerText = `url фото3 -  ${user.photo}`;
     }
 
 
