@@ -60,7 +60,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
     const language = user.language_code;
     const premium = user.is_premium;
-    const theme = user.colorScheme
+    const theme = user.colorScheme;
     const color = user.themeParams;
     // const language = window.Telegram.WebApp.initDataUnsafe.language_code;
     // const theme = window.Telegram.WebApp.initDataUnsafe.colorScheme;
@@ -76,23 +76,23 @@ window.onload = function () {
             document.getElementById('notification-language').innerText = "Ошибка язык системы";
         }
 
-        if (premium) {
+        // if (premium) {
             document.getElementById('notification-premium').innerText = `Премиум - ${premium}`;
-        } else {
-            document.getElementById('notification-premium').innerText = "Ошибка премиум";
-        }
+        // } else {
+        //     document.getElementById('notification-premium').innerText = "Ошибка премиум";
+        // }
 
-        if (theme) {
+        // if (theme) {
             document.getElementById('notification-theme').innerText = `Тема пользователя - ${theme}`;
-        } else {
-            document.getElementById('notification-theme').innerText = "Ошибка темы";
-        }
+        // } else {
+        //     document.getElementById('notification-theme').innerText = "Ошибка темы";
+        // }
         
-        if (color) {
+        // if (color) {
             document.getElementById('notification-theme-edit').innerText = `Тема пользователя - ${color}`;
-        } else {
-            document.getElementById('notification-theme-edit').innerText = "Ошибка цвет системы";
-        }
+        // } else {
+        //     document.getElementById('notification-theme-edit').innerText = "Ошибка цвет системы";
+        // }
     } else {
         document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
     }
