@@ -34,17 +34,7 @@ window.onload = function () {
 
 
     // console.log(`tg. ${}`);
-    // if (user.ThemeParams.bg_color !== undefined) {
-    //     console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
-    // } else{
-    //     console.log(`user.ThemeParams.bg_color undefined`)
-    // }
 
-    if (tg.WebAppInitData.user.username !== undefined) {
-        console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
-    } else{
-        console.log(`tg.WebAppInitData.user.username`)
-    }
     if (tg.WebAppUser.username !== undefined) {
         console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
     } else{
