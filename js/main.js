@@ -69,27 +69,29 @@ window.onload = function () {
     if (user) {
         const username = user.username || "Имя пользователя недоступно";
         document.getElementById('notificationp').innerText = `Привет: ${username}`;
+
         if (language) {
             document.getElementById('notification-language').innerText = `Язык системы - ${language}`;
         } else {
-            document.getElementById('notification-language').innerText = "Не удалось получить язык системы";
+            document.getElementById('notification-language').innerText = "Ошибка язык системы";
         }
-        if (premium == "true") {
-            document.getElementById('notification-premium').innerText = `Премиум пользователь`;
+
+        if (premium) {
+            document.getElementById('notification-premium').innerText = `Премиум - ${premium}`;
         } else {
-            document.getElementById('notification-premium').innerText = "Не премиум";
+            document.getElementById('notification-premium').innerText = "Ошибка премиум";
         }
 
         if (theme) {
             document.getElementById('notification-theme').innerText = `Тема пользователя - ${theme}`;
         } else {
-            document.getElementById('notification-theme').innerText = "Не удалось получить тему";
+            document.getElementById('notification-theme').innerText = "Ошибка темы";
         }
         
         if (color) {
             document.getElementById('notification-theme-edit').innerText = `Тема пользователя - ${color}`;
         } else {
-            document.getElementById('notification-theme-edit').innerText = "Не удалось получить цвет системы";
+            document.getElementById('notification-theme-edit').innerText = "Ошибка цвет системы";
         }
     } else {
         document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
