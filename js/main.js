@@ -114,11 +114,11 @@ window.onload = function () {
     //     console.log(`tg.WebAppUser.username`)
     // }
 
-    if (tg.WebAppUser.language_code !== undefined) {
-        console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
-    } else{
-        console.log(`tg.WebAppUser.language_code`)
-    }
+    // if (tg.WebAppUser.language_code !== undefined) {
+    //     console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
+    // } else{
+    //     console.log(`tg.WebAppUser.language_code`)
+    // }
     if (tg.WebAppUser.is_premium !== undefined) {
         console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
     } else{
