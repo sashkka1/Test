@@ -40,13 +40,10 @@ function UserLanguage() {
 window.onload = function () {
     // UserUsername();
     // UserLanguage();
+    const tg = window.Telegram.WebApp;
+    tg.ready();
     const user = window.Telegram.WebApp.initDataUnsafe.user;
-    const premium = user.is_premium;
-    const theme = user.colorScheme;
-    const color = user.themeParams;
-    const photo = user.photo_url;
-    // const theme = window.Telegram.WebApp.initDataUnsafe.colorScheme;
-    // const color = window.Telegram.WebApp.initDataUnsafe.themeParams;
+
     console.log("вывод содержимого в обьекте Userэ");
     console.log(`вывод содержимого в обьекте User.username - ${user.username}`);
     console.log(`вывод содержимого в обьекте User.language_code - ${user.language_code}`);
@@ -56,11 +53,6 @@ window.onload = function () {
     console.log(`что получаю в  user.themeParams ${user.themeParams}`);
     console.log(`что получаю в user.photo_url  ${user.photo_url}`);
     console.log(`что получаю в user.photo ${user.photo}`);
-    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.is_premium ${window.Telegram.WebApp.initDataUnsafe.is_premium}`);
-    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.colorScheme ${window.Telegram.WebApp.initDataUnsafe.colorScheme}`);
-    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.themeParams ${window.Telegram.WebApp.initDataUnsafe.themeParams}`);
-    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.photo_url ${window.Telegram.WebApp.initDataUnsafe.photo_url}`);
-    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.photo ${window.Telegram.WebApp.initDataUnsafe.photo}`);
 
     
 
