@@ -59,6 +59,8 @@ window.onload = function () {
 
     const user = window.Telegram.WebApp.initDataUnsafe.user;
     const language = user.language_code;
+    const premium = user.is_premium;
+    
     // const language = window.Telegram.WebApp.initDataUnsafe.language_code;
     const theme = window.Telegram.WebApp.initDataUnsafe.colorScheme;
     const color = window.Telegram.WebApp.initDataUnsafe.themeParams;
@@ -70,6 +72,11 @@ window.onload = function () {
             document.getElementById('notification-language').innerText = `Язык системы - ${language}`;
         } else {
             document.getElementById('notification-language').innerText = "Не удалось получить язык системы";
+        }
+        if (premium == "true") {
+            document.getElementById('notification-premium').innerText = `Премиум пользователь`;
+        } else {
+            document.getElementById('notification-premium').innerText = "Не премиум";
         }
 
         if (theme) {
