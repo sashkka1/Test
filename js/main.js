@@ -29,17 +29,7 @@ window.onload = function () {
     tg.ready();
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
-    console.log("вывод содержимого в обьекте Userэ");
-    console.log(`вывод содержимого в обьекте User.username - ${user.username}`);
-    console.log(`вывод содержимого в обьекте User.language_code - ${user.language_code}`);
-    console.log(`вывод содержимого в обьекте User - ${user}`);
-    console.log(`что получаю в user.is_premium  ${user.is_premium}`);
-    console.log(`что получаю в user.colorScheme  ${user.colorScheme}`);
-    console.log(`что получаю в  user.themeParams ${user.themeParams}`);
-    console.log(`что получаю в user.photo_url  ${user.photo_url}`);
-    console.log(`что получаю в user.photo ${user.photo}`);
-    console.log(`--------------------------------------`);
-    console.log(`--------------------------------------`);
+
     // console.log(`user.bg_color ${user.bg_color}`);
     // console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
     // console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
