@@ -28,7 +28,7 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
-    document.getElementById('notificationp').innerText = "Test 2";
+    document.getElementById('notificationp').innerText = "Test 3";
 
 
 
