@@ -54,46 +54,45 @@ window.onload = function () {
 
         sessionStorage.setItem('forScore',forScore);
     }
-
-    //  const user = Telegram.WebApp.initDataUnsafe.user;
-    
-    // if (user) {
-    //     const username = user.username || "Имя пользователя недоступно";
-    //     document.getElementById('notificationp').innerText = `Привет: ${username}`;
-    // } else {
-    //     document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
-    // }
-    // if (user && user.photo_url) {
-    //     // Создаем элемент изображения
-    //     const img = document.createElement('img');
-    //     img.src = user.photo_url;
-    //     img.alt = 'User Photo';
-    //     img.style.width = '100px'; // Устанавливаем ширину изображения
-    //     img.style.height = '100px'; // Устанавливаем высоту изображения
-    //     // Добавляем изображение в контейнер
-    //     document.getElementById('notificationimg').appendChild(img);
-    // } else {
-    //     document.getElementById('notificationpp').innerText = `url фото -  ${user.photo_url}`;
-    // }
-    const tg = window.Telegram.WebApp;
-    const user = tg.initDataUnsafe.user;
-    
+    const tg = window.Telegram.initDataUnsafe;
+    const user = tg.user;
+    const language = tg.language_code;
+    const theme = tg.colorScheme;
+    const color = tg.themeParams;
     if (user) {
         const username = user.username || "Имя пользователя недоступно";
         document.getElementById('notificationp').innerText = `Привет: ${username}`;
+        if (language) {
+            document.getElementById('notification-language').innerText = `Язык системы - ${language}`;
+        } else {
+            document.getElementById('notification-language').innerText = "Не удалось получить язык системы";
+        }
+
+        if (theme) {
+            document.getElementById('notification-theme').innerText = `Тема пользователя - ${theme}`;
+        } else {
+            document.getElementById('notification-theme').innerText = "Не удалось получить тему";
+        }
+        
+        if (color) {
+            document.getElementById('notification-theme-edit').innerText = `Тема пользователя - ${color}`;
+        } else {
+            document.getElementById('notification-theme-edit').innerText = "Не удалось получить тему";
+        }
     } else {
-        document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе2";
+        document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
     }
-    if (user.photo) {
-        document.getElementById('notification-img').src = user.photo;
-        document.getElementById('notification-img').style.display = 'block';
-    } else {
-        document.getElementById('notificationpp').innerText = `url фото3 -  ${user.photo}`;
-    }
+
 
 
     firstTry();
 }
+
+document.getElementById('notification-button').addEventListener('click', function() {
+    const block = document.getElementById('notification');
+    block.classList.add('notification-close');
+});
+
 
 function dinamicRange(){
     // console.log('7');
@@ -978,10 +977,4 @@ jQuery(document).ready(function() {
 		var valUpper = $('.upper-double').val();
 		$(this).val(Math.floor(valUpper));
 	});
-});
-
-
-document.getElementById('notification-button').addEventListener('click', function() {
-    const block = document.getElementById('notification');
-    block.classList.add('notification-close');
 });
