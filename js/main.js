@@ -43,11 +43,11 @@ window.onload = function () {
     // console.log(`user.bg_color ${user.bg_color}`);
     // console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
     // console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
-    console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
-    console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
-    console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
-    console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
-    console.log(`tg.WebAppUser.photo_url ${tg.WebAppUser.photo_url}`);
+    // console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
+    // console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
+    // console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
+    // console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
+    // console.log(`tg.WebAppUser.photo_url ${tg.WebAppUser.photo_url}`);
     // console.log(`tg. ${}`);
     // console.log(`tg. ${}`);
     // console.log(`tg. ${}`);
