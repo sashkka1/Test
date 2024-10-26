@@ -29,7 +29,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
     // console.log(`user.username ${user.username}`);
-    
+
     document.getElementById('notificationp').innerText = "Test 8";
 
 
@@ -75,12 +75,11 @@ window.onload = function () {
     // });
 
 
-    const { refreshToken, accessToken } = dataProvider;
+    // const { refreshToken, accessToken } = dataProvider;
     window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
     window.Telegram.WebApp.CloudStorage.setItem("refreshToken", refreshToken);
     console.log(`accessToken ${accessToken}`);
     console.log(`refreshToken ${refreshToken}`);
-    console.log(`dataProvider ${dataProvider}`);
     window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
         if (err || !accessToken) {
             console.log(`ошибка получения`);
