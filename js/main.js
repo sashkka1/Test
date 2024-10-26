@@ -54,11 +54,14 @@ window.onload = function () {
 
         sessionStorage.setItem('forScore',forScore);
     }
-    const tg = window.Telegram.initDataUnsafe;
-    const user = tg.user;
-    const language = tg.language_code;
-    const theme = tg.colorScheme;
-    const color = tg.themeParams;
+
+
+
+    const user = window.Telegram.WebApp.initDataUnsafe.user;
+    const language = window.Telegram.WebApp.initDataUnsafe.language_code;
+    const theme = window.Telegram.WebApp.initDataUnsafe.colorScheme;
+    const color = window.Telegram.WebApp.initDataUnsafe.themeParams;
+
     if (user) {
         const username = user.username || "Имя пользователя недоступно";
         document.getElementById('notificationp').innerText = `Привет: ${username}`;
