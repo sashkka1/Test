@@ -1,20 +1,5 @@
 "use strict";
 
-var Git ='https://sashkka1.github.io/MathScore/';
-var Home ='http://127.0.0.1:5501/MathScore/';
-var stringUse = Git;
-var answer = 0;
-var score = 0;
-var mistake = -1;
-var countExample = 10;
-var seconds = 0;
-var timeArray = [0, 0, 0, 0,0,0,0,0,0,0,];
-var forScore = [1,1,1,1,];
-var forMemery = [0,100,0,20,];
-var forMistake = [];
-var forCheck = -1;
-
-
 
 function UserUsername() {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
@@ -55,8 +40,8 @@ window.onload = function () {
     console.log(`что получаю в user.photo ${user.photo}`);
     console.log(`--------------------------------------`);
     console.log(`--------------------------------------`);
-    console.log(`user.bg_color ${user.bg_color}`);
-    console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
+    // console.log(`user.bg_color ${user.bg_color}`);
+    // console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
     console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
     console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
     console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
