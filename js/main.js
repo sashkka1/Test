@@ -62,6 +62,25 @@ window.onload = function () {
         document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
     }
 
+    if (user && user.photo_url) {
+        // Создаем элемент изображения
+        const img = document.createElement('img');
+        img.src = user.photo_url;
+        img.alt = 'User Photo';
+        img.style.width = '100px'; // Устанавливаем ширину изображения
+        img.style.height = '100px'; // Устанавливаем высоту изображения
+
+        // Добавляем изображение в контейнер
+        document.getElementById('user-photo-container').appendChild(img);
+    } else {
+        document.getElementById('notification-language').innerText = `Ошибка img ${img}`;
+        document.getElementById('notification-language').innerText = `Ошибка user.photo_url ${user.photo_url}`;
+        document.getElementById('notification-language').innerText = `Ошибка img.src ${img.src}`;
+    }
+    
+
+
+
 
     // let count = -1;
 
