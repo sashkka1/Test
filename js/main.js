@@ -49,49 +49,52 @@ window.onload = function () {
 
 
 
-    let count = 1; // Начальное значение
+    // let count = 1; // Начальное значение
 
-    let currentCount;
-    // Получаем значение count из CloudStorage
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
-        if (err) {
-            console.log(`Ошибка получения ${value}`);
-            return;
-        }
-    
-        // Преобразуем строку в число
-        currentCount = parseInt(value, 10);
-        console.log(`преобразовал значение число ${currentCount}`);
-        console.log(`преобразовал значение строка ${value}`);
-        document.getElementById('notification-count').innerText = currentCount;
-    });
-    currentCount ++;
-    // Сохраняем значение count в CloudStorage
-    window.Telegram.WebApp.CloudStorage.setItem("count", currentCount, (err) => {
-        if (err) {
-            console.log(`Ошибка сохранения ${currentCount}`);
-        }
-    });
-
-
-    // const { refreshToken, accessToken } = dataProvider;
-    // window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
-    // window.Telegram.WebApp.CloudStorage.setItem("refreshToken", refreshToken);
-    // window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
-    //     if (err || !accessToken) {
-    //         // in edge cases you can fetch tokens from your backend
-    //         return getAccessToken();
+    // let currentCount;
+    // // Получаем значение count из CloudStorage
+    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
+    //     if (err) {
+    //         console.log(`Ошибка получения ${value}`);
+    //         return;
     //     }
-    //     document.getElementById('notification-language').innerText = `Счет равен - ${accessToken}`;
-    // });
     
-    // window.Telegram.WebApp.CloudStorage.getItem("refreshToken", (err, refreshToken) => {
-    //     if (err || !refreshToken) {
-    //         // in edge cases you can fetch tokens from your backend
-    //         return getRefreshToken();
-    //     }
-    //     document.getElementById('notification-count').innerText = `Счет равен - ${refreshToken}`;
+    //     // Преобразуем строку в число
+    //     currentCount = parseInt(value, 10);
+    //     console.log(`преобразовал значение число ${currentCount}`);
+    //     console.log(`преобразовал значение строка ${value}`);
+    //     document.getElementById('notification-count').innerText = currentCount;
     // });
+    // currentCount ++;
+    // // Сохраняем значение count в CloudStorage
+    // window.Telegram.WebApp.CloudStorage.setItem("count", currentCount, (err) => {
+    //     if (err) {
+    //         console.log(`Ошибка сохранения ${currentCount}`);
+    //     }
+    // });
+
+
+    const { refreshToken, accessToken } = dataProvider;
+    window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
+    window.Telegram.WebApp.CloudStorage.setItem("refreshToken", refreshToken);
+    console.log(`accessToken ${accessToken}`);
+    console.log(`refreshToken ${refreshToken}`);
+    console.log(`dataProvider ${dataProvider}`);
+    window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
+        if (err || !accessToken) {
+            console.log(`ошибка получения`);
+            return getAccessToken();
+        }
+        console.log(`accessToken2 ${accessToken}`);
+    });
+    
+    window.Telegram.WebApp.CloudStorage.getItem("refreshToken", (err, refreshToken) => {
+        if (err || !refreshToken) {
+            console.log(`ошибка получения2`);
+            return getRefreshToken();
+        }
+        console.log(`refreshToken2 ${refreshToken}`);
+    });
 
 
 
