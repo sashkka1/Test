@@ -28,6 +28,8 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
+    document.getElementById('notificationp').innerText = "Test 7";
+
     console.log(`user.username ${user.username}`);
 
     console.log(`user.bg_color ${user.bg_color}`);
