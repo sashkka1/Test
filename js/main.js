@@ -53,7 +53,23 @@ window.onload = function () {
     console.log(`что получаю в  user.themeParams ${user.themeParams}`);
     console.log(`что получаю в user.photo_url  ${user.photo_url}`);
     console.log(`что получаю в user.photo ${user.photo}`);
-
+    console.log(`--------------------------------------`);
+    console.log(`--------------------------------------`);
+    console.log(`user.bg_color ${user.bg_color}`);
+    console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
+    console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
+    console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
+    console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
+    console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
+    console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
+    console.log(`tg.WebAppUser.photo_url ${tg.WebAppUser.photo_url}`);
+    // console.log(`tg. ${}`);
+    // console.log(`tg. ${}`);
+    // console.log(`tg. ${}`);
+    // console.log(`tg. ${}`);
+    // console.log(`tg. ${}`);
+    
+    
     
 
 
