@@ -100,25 +100,47 @@ window.onload = function () {
     //     document.getElementById('notification-count').innerText = `Счет равен - ${count}`;
     // });
 
-    let count = 0; // Начальное значение
 
-    // Сохраняем значение count в CloudStorage
-    window.Telegram.WebApp.CloudStorage.setItem("count", count, (err) => {
-        if (err) {
-            document.getElementById('notification-theme').innerText = "Ошибка сохранения";
+
+    // let count = 0; // Начальное значение
+
+    // // Сохраняем значение count в CloudStorage
+    // window.Telegram.WebApp.CloudStorage.setItem("count", count, (err) => {
+    //     if (err) {
+    //         document.getElementById('notification-theme').innerText = "Ошибка сохранения";
+    //     }
+    // });
+    
+    // // Получаем значение count из CloudStorage
+    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
+    //     if (err) {
+    //         document.getElementById('notification-language').innerText = "Ошибка получения";
+    //         return;
+    //     }
+    
+    //     // Преобразуем строку в число
+    //     let currentCount = parseInt(value, 10);
+    //     document.getElementById('notification-count').innerText = `Счет равен - ${currentCount}`;
+    // });
+
+
+    const { refreshToken, accessToken } = dataProvider;
+    window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
+    window.Telegram.WebApp.CloudStorage.setItem("refreshToken", refreshToken);
+    window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
+        if (err || !accessToken) {
+            // in edge cases you can fetch tokens from your backend
+            return getAccessToken();
         }
+        document.getElementById('notification-language').innerText = `Счет равен - ${accessToken}`;
     });
     
-    // Получаем значение count из CloudStorage
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
-        if (err) {
-            document.getElementById('notification-language').innerText = "Ошибка получения";
-            return;
+    window.Telegram.WebApp.CloudStorage.getItem("refreshToken", (err, refreshToken) => {
+        if (err || !refreshToken) {
+            // in edge cases you can fetch tokens from your backend
+            return getRefreshToken();
         }
-    
-        // Преобразуем строку в число
-        let currentCount = parseInt(value, 10);
-        document.getElementById('notification-count').innerText = `Счет равен - ${currentCount}`;
+        document.getElementById('notification-count').innerText = `Счет равен - ${refreshToken}`;
     });
 
 
