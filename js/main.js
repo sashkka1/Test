@@ -38,8 +38,8 @@ function UserLanguage() {
 
 
 window.onload = function () {
-    UserUsername();
-    UserLanguage();
+    // UserUsername();
+    // UserLanguage();
     const user = window.Telegram.WebApp.initDataUnsafe.user;
     const language = user.language_code;
     const premium = user.is_premium;
