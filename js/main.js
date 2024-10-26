@@ -48,6 +48,8 @@ window.onload = function () {
     // const theme = window.Telegram.WebApp.initDataUnsafe.colorScheme;
     // const color = window.Telegram.WebApp.initDataUnsafe.themeParams;
     console.log("вывод содержимого в обьекте Userэ");
+    console.log(`вывод содержимого в обьекте User.username - ${user.username}`);
+    console.log(`вывод содержимого в обьекте User.language_code - ${user.language_code}`);
     console.log(`вывод содержимого в обьекте User - ${user}`);
     console.log(`что получаю в user.is_premium  ${user.is_premium}`);
     console.log(`что получаю в user.colorScheme  ${user.colorScheme}`);
