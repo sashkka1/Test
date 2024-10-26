@@ -29,56 +29,23 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
     document.getElementById('notificationp').innerText = "Test 2";
-    
-
-    console.log(`user.username ${user.username}`);
-
-
-    // console.log(`tg. ${}`);
-
-    if (tg.WebAppUser.username !== undefined) {
-        console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
-    } else{
-        console.log(`tg.WebAppUser.username`)
-    }
-
-    if (tg.WebAppUser.language_code !== undefined) {
-        console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
-    } else{
-        console.log(`tg.WebAppUser.language_code`)
-    }
-    if (tg.WebAppUser.is_premium !== undefined) {
-        console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
-    } else{
-        console.log(`tg.WebAppUser.is_premium`)
-    }
-    if (tg.WebAppUser.photo_url !== undefined) {
-        console.log(`tg.WebAppUser.photo_url ${tg.WebAppUser.photo_url}`);
-    } else{
-        console.log(`tg.WebAppUser.photo_url`)
-    }
-    // if (myObject !== undefined) {
-    //     console.log(` ${}`);
-    // } else{
-    //     console.log(``)
-    // }
 
 
 
 
 
-    // let count = -1;
+    let count = -1;
 
-    // window.Telegram.WebApp.CloudStorage.setItem("count", count);
-    // count++;
+    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    console.log("Запись прошла");
 
-    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
-    //     if (err || !count) {
-    //         document.getElementById('notification-count').innerText = "Нету ";
-    //     }
-    
-    //     document.getElementById('notification-count').innerText = `Счет равен - ${count}`;
-    // });
+    window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
+        if (err || !count) {
+            console.log("Ошибка возврата");
+        }
+        console.log(`возврат успешный ${count}`);
+    });
+    count++;
 
 
 
@@ -122,5 +89,57 @@ window.onload = function () {
     //     }
     //     document.getElementById('notification-count').innerText = `Счет равен - ${refreshToken}`;
     // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    console.log(`user.username ${user.username}`);
+
+
+    // console.log(`tg. ${}`);
+
+    // if (tg.WebAppUser.username !== undefined) {
+    //     console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
+    // } else{
+    //     console.log(`tg.WebAppUser.username`)
+    // }
+
+    if (tg.WebAppUser.language_code !== undefined) {
+        console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
+    } else{
+        console.log(`tg.WebAppUser.language_code`)
+    }
+    if (tg.WebAppUser.is_premium !== undefined) {
+        console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
+    } else{
+        console.log(`tg.WebAppUser.is_premium`)
+    }
+    if (tg.WebAppUser.photo_url !== undefined) {
+        console.log(`tg.WebAppUser.photo_url ${tg.WebAppUser.photo_url}`);
+    } else{
+        console.log(`tg.WebAppUser.photo_url`)
+    }
+    // if (myObject !== undefined) {
+    //     console.log(` ${}`);
+    // } else{
+    //     console.log(``)
+    // }
+
+
+
+
+
+
 
 }
