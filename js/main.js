@@ -29,7 +29,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
     // console.log(`user.username ${user.username}`);
-    document.getElementById('notificationp').innerText = "Test 6";
+    document.getElementById('notificationp').innerText = "Test 7";
 
 
 
@@ -51,7 +51,7 @@ window.onload = function () {
 
     let count = 1; // Начальное значение
 
-    
+    let currentCount;
     // Получаем значение count из CloudStorage
     window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
         if (err) {
@@ -60,9 +60,10 @@ window.onload = function () {
         }
     
         // Преобразуем строку в число
-        let currentCount = parseInt(value, 10);
+        currentCount = parseInt(value, 10);
         console.log(`преобразовал значение число ${currentCount}`);
         console.log(`преобразовал значение строка ${value}`);
+        document.getElementById('notification-count').innerText = currentCount;
     });
     currentCount ++;
     // Сохраняем значение count в CloudStorage
