@@ -85,29 +85,42 @@ window.onload = function () {
     } else {
         document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
     }
-    let count = -1;
 
-    window.Telegram.WebApp.CloudStorage.setItem("count", count);
-    count++;
 
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
-        if (err || !accessToken) {
-            document.getElementById('notification-count').innerText = "Нету ";
+    // let count = -1;
+
+    // window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    // count++;
+
+    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
+    //     if (err || !count) {
+    //         document.getElementById('notification-count').innerText = "Нету ";
+    //     }
+    
+    //     document.getElementById('notification-count').innerText = `Счет равен - ${count}`;
+    // });
+
+    let count = 0; // Начальное значение
+
+    // Сохраняем значение count в CloudStorage
+    window.Telegram.WebApp.CloudStorage.setItem("count", count, (err) => {
+        if (err) {
+            document.getElementById('notification-theme').innerText = "Ошибка сохранения";
+        }
+    });
+    
+    // Получаем значение count из CloudStorage
+    window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
+        if (err) {
+            document.getElementById('notification-language').innerText = "Ошибка получения";
+            return;
         }
     
-        document.getElementById('notification-count').innerText = `Счет равен - ${count}`;
+        // Преобразуем строку в число
+        let currentCount = parseInt(value, 10);
+        document.getElementById('notification-count').innerText = `Счет равен - ${currentCount}`;
     });
 
-
-    window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
-    window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
-        if (err || !accessToken) {
-            // in edge cases you can fetch tokens from your backend
-            return getAccessToken();
-        }
-    
-        setAccessToken(accessToken);
-    });
 
     firstTry();
 }
