@@ -29,6 +29,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
     // console.log(`user.username ${user.username}`);
+    
     document.getElementById('notificationp').innerText = "Test 8";
 
 
