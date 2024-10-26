@@ -28,6 +28,7 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
+    console.log(`user.username ${user.username}`);
 
     // console.log(`user.bg_color ${user.bg_color}`);
     // console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
