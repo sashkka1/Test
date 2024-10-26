@@ -26,7 +26,6 @@ window.onload = function () {
     // UserUsername();
     // UserLanguage();
     const tg = window.Telegram.WebApp;
-    tg.ready();
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
