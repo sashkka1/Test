@@ -80,13 +80,34 @@ window.onload = function () {
         if (color) {
             document.getElementById('notification-theme-edit').innerText = `Тема пользователя - ${color}`;
         } else {
-            document.getElementById('notification-theme-edit').innerText = "Не удалось получить тему";
+            document.getElementById('notification-theme-edit').innerText = "Не удалось получить цвет системы";
         }
     } else {
         document.getElementById('notificationp').innerText = "Не удалось получить информацию о пользователе";
     }
+    let count = -1;
+
+    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    count++;
+
+    window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
+        if (err || !accessToken) {
+            document.getElementById('notification-count').innerText = "Нету ";
+        }
+    
+        document.getElementById('notification-count').innerText = `Счет равен - ${count}`;
+    });
 
 
+    window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
+    window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
+        if (err || !accessToken) {
+            // in edge cases you can fetch tokens from your backend
+            return getAccessToken();
+        }
+    
+        setAccessToken(accessToken);
+    });
 
     firstTry();
 }
