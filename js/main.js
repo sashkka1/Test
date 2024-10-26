@@ -28,17 +28,17 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
-    document.getElementById('notificationp').innerText = "Test 9";
+    document.getElementById('notificationp').innerText = "Test 1";
 
     console.log(`user.username ${user.username}`);
 
 
     // console.log(`tg. ${}`);
-    if (user.ThemeParams.bg_color !== undefined) {
-        console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
-    } else{
-        console.log(`user.ThemeParams.bg_color undefined`)
-    }
+    // if (user.ThemeParams.bg_color !== undefined) {
+    //     console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
+    // } else{
+    //     console.log(`user.ThemeParams.bg_color undefined`)
+    // }
 
     if (tg.WebAppInitData.user.username !== undefined) {
         console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
