@@ -42,7 +42,7 @@ window.onload = function () {
     console.log(`--------------------------------------`);
     // console.log(`user.bg_color ${user.bg_color}`);
     // console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
-    console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
+    // console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
     console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
     console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
     console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
