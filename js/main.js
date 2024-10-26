@@ -44,44 +44,21 @@ window.onload = function () {
     const premium = user.is_premium;
     const theme = user.colorScheme;
     const color = user.themeParams;
+    const photo = user.photo_url;
     // const theme = window.Telegram.WebApp.initDataUnsafe.colorScheme;
     // const color = window.Telegram.WebApp.initDataUnsafe.themeParams;
+    console.log(`вывод содержимого в обьекте User - ${user}`);
+    console.log(`что получаю в user.is_premium  ${user.is_premium}`);
+    console.log(`что получаю в user.colorScheme  ${user.colorScheme}`);
+    console.log(`что получаю в  user.themeParams ${user.themeParams}`);
+    console.log(`что получаю в user.photo_url  ${user.photo_url}`);
+    console.log(`что получаю в user.photo ${user.photo}`);
+    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.is_premium ${window.Telegram.WebApp.initDataUnsafe.is_premium}`);
+    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.colorScheme ${window.Telegram.WebApp.initDataUnsafe.colorScheme}`);
+    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.themeParams ${window.Telegram.WebApp.initDataUnsafe.themeParams}`);
+    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.photo_url ${window.Telegram.WebApp.initDataUnsafe.photo_url}`);
+    console.log(`что получаю в  window.Telegram.WebApp.initDataUnsafe.photo ${window.Telegram.WebApp.initDataUnsafe.photo}`);
 
-
-    // if (premium) {
-        document.getElementById('notification-premium').innerText = `Премиум - ${premium}`;
-    // } else {
-    //     document.getElementById('notification-premium').innerText = "Ошибка премиум";
-    // }
-
-    // if (theme) {
-        document.getElementById('notification-theme').innerText = `Тема пользователя - ${theme}`;
-    // } else {
-    //     document.getElementById('notification-theme').innerText = "Ошибка темы";
-    // }
-    
-    // if (color) {
-        document.getElementById('notification-theme-edit').innerText = `Тема пользователя - ${color}`;
-    // } else {
-    //     document.getElementById('notification-theme-edit').innerText = "Ошибка цвет системы";
-    // }
-
-
-    if (user && user.photo_url) {
-        // Создаем элемент изображения
-        const img = document.createElement('img');
-        img.src = user.photo_url;
-        img.alt = 'User Photo';
-        img.style.width = '100px'; // Устанавливаем ширину изображения
-        img.style.height = '100px'; // Устанавливаем высоту изображения
-
-        // Добавляем изображение в контейнер
-        document.getElementById('user-photo-container').appendChild(img);
-    } else {
-        document.getElementById('notification-language').innerText = `Ошибка img ${img}`;
-        document.getElementById('notification-language').innerText = `Ошибка user.photo_url ${user.photo_url}`;
-        document.getElementById('notification-language').innerText = `Ошибка img.src ${img.src}`;
-    }
     
 
 
@@ -144,8 +121,3 @@ window.onload = function () {
     // });
 
 }
-
-document.getElementById('notification-button').addEventListener('click', function() {
-    const block = document.getElementById('notification');
-    block.classList.add('notification-close');
-});
