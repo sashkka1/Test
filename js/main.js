@@ -28,14 +28,14 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
-    document.getElementById('notificationp').innerText = "Test 8";
+    document.getElementById('notificationp').innerText = "Test 9";
 
     console.log(`user.username ${user.username}`);
 
     // console.log(`user.bg_color ${user.bg_color}`);
     // // console.log(`user.ThemeParams.bg_color ${user.ThemeParams.bg_color}`);
     // console.log(`tg.ThemeParams.bg_color ${tg.ThemeParams.bg_color}`);
-    console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
+    // console.log(`tg.WebAppInitData.user.username ${tg.WebAppInitData.user.username}`);
     console.log(`tg.WebAppUser.username ${tg.WebAppUser.username}`);
     console.log(`tg.WebAppUser.language_code ${tg.WebAppUser.language_code}`);
     console.log(`tg.WebAppUser.is_premium ${tg.WebAppUser.is_premium}`);
