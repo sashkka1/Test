@@ -77,7 +77,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 9";
+    document.getElementById('notificationp').innerHTML = "Test 10";
 
 
     let NewName='';
@@ -93,7 +93,7 @@ window.onload = function () {
 
     let name;
 
-    name = getcount();
+    // name = getcount();
     if (!name) {
         console.log(`вывод 4  ${name}`);
     let aaa='asdf';
