@@ -10,7 +10,7 @@ function Use_work() {
 }
 
 function how_tma(){
-    let count;
+    // let count;
     let newcount;
     // window.Telegram.WebApp.CloudStorage.setItem("count", count);
 
@@ -21,8 +21,11 @@ function how_tma(){
     // window.Telegram.WebApp.CloudStorage.removeItem("count")
     // count = count + 1;
     // window.Telegram.WebApp.CloudStorage.setItem("count", count);
-
-    window.Telegram.WebApp.CloudStorage.setStorageItem('initDat', JSON.stringify(this.initDataUnsafe))
+    let count = {
+        key: "count",
+        anotherKey: "anotherCount"
+    };
+    window.Telegram.WebApp.CloudStorage.setStorageItem('initDat', JSON.stringify(count))
 
     window.Telegram.WebApp.getStorageItem('initDat').then((data, err) => {
         if(data && !err) {
@@ -65,7 +68,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
 
 
@@ -74,10 +77,6 @@ window.onload = function () {
     console.log(`user.username ${user.username}`);
 
     
-    let count = {
-        key: "count",
-        anotherKey: "anotherCount"
-    };
 
 
 
