@@ -34,10 +34,10 @@ function cloud_i(){
 
 function get(){
     const tg = window.Telegram.WebApp;
-    console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.receiver.is_premium}`);
-    console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.user.is_premium}`);
-    console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.receiver.photo_url}`);
-    console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.user.photo_url}`);
+    // console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.receiver.is_premium}`);
+    // console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.user.is_premium}`);
+    // console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.receiver.photo_url}`);
+    // console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.user.photo_url}`);
     // console.log(`tg.initData ${}`);
     // console.log(`tg.initData ${tg.initData}`);
     // console.log(`tg.initData ${tg.initData}`);
@@ -60,7 +60,7 @@ window.onload = function () {
 
 
     console.log(`user.username ${user.username}`);
-    get();
+    how_tma()
     console.log(`user.username ${user.username}`);
 
     
