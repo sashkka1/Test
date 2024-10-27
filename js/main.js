@@ -7,16 +7,22 @@ function Use_work() {
     tg.themeParams.bg_color
     tg.colorScheme
     tg.initDataUnsafe.auth_date
+
+
+    let count = localStorage.getItem('count');
+    document.getElementById('notification-count').innerHTML = `Счет ${count}`;
+    count++;
+    localStorage.setItem('count', count);
 }
 
 function how_tma(){
-    let count =1;
-    let newcount;
-    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    let Name ="asdf";
+    let NewName;
+    window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
     // count =0;
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
-        console.log(`вывод успешн ${newcount}`);
-        count = newcount;
+    window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
+        console.log(`вывод успешн ${NewName}`);
+        Name = NewName;
     });
     // window.Telegram.WebApp.CloudStorage.removeItem("count")
     // count = count + 1;
@@ -41,7 +47,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 2";
+    document.getElementById('notificationp').innerHTML = "Test 3";
 
 
     if(user.is_premium !== undefined){
@@ -58,10 +64,6 @@ window.onload = function () {
     how_tma()
     console.log(`user.username ${user.username}`);
 
-    let count = localStorage.getItem('count');
-    document.getElementById('notification-count').innerHTML = `Счет ${count}`;
-    count++;
-    localStorage.setItem('count', count);
 
     // let name= 'aaaaaaaaaa';
     // localStorage.setItem('name', name);
