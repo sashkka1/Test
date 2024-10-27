@@ -62,7 +62,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 4";
+    document.getElementById('notificationp').innerHTML = "Test 5";
 
 
     let NewName;
@@ -73,13 +73,13 @@ window.onload = function () {
         if (!Name) {
             console.log(`вывод 2  ${Name}`);
             Name =0;
-            window.Telegram.WebApp.CloudStorage.setItem("count", Name);
         } else{
             console.log(`вывод 3  ${Name}`);
             NewName = Name;
             console.log(`вывод 4  ${NewName}`);
         Name++;
         }
+        window.Telegram.WebApp.CloudStorage.setItem("count", Name);
         document.getElementById('notification-count').innerHTML = `count ${Name}` ;
     });
 
