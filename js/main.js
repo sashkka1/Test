@@ -36,6 +36,15 @@ function how_tma(){
     window.Telegram.WebApp.CloudStorage.setItem("count", count);
 }
 
+function cloud_i(){
+    let count= 11;
+    let newcount;
+    const tg = window.Telegram.WebApp.CloudStorage;
+
+    tg.setItem("count", count);
+    newcount = getItem("count");
+}
+
 function get(){
     const tg = window.Telegram.WebApp;
     console.log(`tg.UserLanguage ${tg.UserLanguage}`);
@@ -47,6 +56,12 @@ function get(){
     console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.receiver.photo_url}`);
     console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.user.is_premium}`);
     console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.user.photo_url}`);
+    // console.log(`tg.initData ${}`);
+    // console.log(`tg.initData ${tg.initData}`);
+    // console.log(`tg.initData ${tg.initData}`);
+    // console.log(`tg.initData ${tg.initData}`);
+    // console.log(`tg.initData ${tg.initData}`);
+    // console.log(`tg.initData ${tg.initData}`);
 
 }
 
@@ -63,7 +78,7 @@ window.onload = function () {
 
 
     console.log(`user.username ${user.username}`);
-    how_tma();
+    get();
     console.log(`user.username ${user.username}`);
 
     
@@ -71,9 +86,6 @@ window.onload = function () {
         key: "count",
         anotherKey: "anotherCount"
     };
-
-    // Функция для отправки данных
-        // tg.sendData(JSON.stringify(count));
 
 
 
