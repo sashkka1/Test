@@ -25,9 +25,9 @@ function how_tma(){
         key: "count",
         anotherKey: "anotherCount"
     };
-    window.Telegram.WebApp.CloudStorage.setStorageItem('initDat', JSON.stringify(count))
+    window.Telegram.WebApp.CloudStorage.setItem('initDat', JSON.stringify(count))
 
-    window.Telegram.WebApp.getStorageItem('initDat').then((data, err) => {
+    window.Telegram.WebApp.getItem('initDat').then((data, err) => {
         if(data && !err) {
         console.log(JSON.parse(data))
         } else {
@@ -68,7 +68,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 2";
+    document.getElementById('notificationp').innerHTML = "Test 3";
 
 
 
