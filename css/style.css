@@ -38,6 +38,7 @@ nav, footer,header, aside{display: block;}
 
 #notificationp{
     text-align: center;
+    transition-duration: 0.5s;
 }
 
 
