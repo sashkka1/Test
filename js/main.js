@@ -62,7 +62,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 5";
+    document.getElementById('notificationp').innerHTML = "Test 6";
 
 
     let NewName='';
@@ -74,11 +74,18 @@ window.onload = function () {
     // Name ="asdf";
     // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
     // Name ="asdasdasdasd";
-    // window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
-    //     console.log(`вывод 5  ${NewName}`);
-    //     return NewName;
-    // });
+    window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
+        console.log(`вывод 5  ${NewName}`);
+        // return NewName;
+    });
 
+    let Name = window.Telegram.WebApp.CloudStorage.getItem("Name", (err, Name) => {
+        NewName = JSON.stringify(Name);
+        console.log(`вывод 4  ${NewName}`);
+        console.log(`вывод 3  ${Name}`);
+        return NewName; 
+        });
+        console.log(`вывод 2  ${Name}`);
     // if(Name !== ''){
     //     Name ="asdf";
     //     console.log(`вывод 2  ${Name}`);
@@ -89,8 +96,8 @@ window.onload = function () {
     // }
     // document.getElementById('notification-count').innerHTML = `Имя ${Name}`;
 
-    let Name='aaaaaaaaaaaaaaaaaaaa';
-    window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
+    // let Name='aaaaaaaaaaaaaaaaaaaa';
+    // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
 
 
 

@@ -22,7 +22,7 @@ nav, footer,header, aside{display: block;}
 
 
 .notification{
-
+    transition-duration: 0.2s;
     z-index: 10;
     width: 100%;
     height: 100%;
