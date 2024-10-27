@@ -1,6 +1,5 @@
 "use strict";
 
-
 function UserUsername() {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
     if (user) {
@@ -20,6 +19,19 @@ function UserLanguage() {
     }
 }
 
+function how_tma(){
+    let count =0 ;
+    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+
+    window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
+        if (err || !count) {
+            console.log(`ошибка вывода ${count}`);
+        } else{
+            console.log(`вывод успешн ${count}`);
+        }
+    
+    });
+}
 
 
 window.onload = function () {
@@ -29,73 +41,14 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
     // console.log(`user.username ${user.username}`);
+    how_tma()
+    let count = {
+        key: "count",
+        anotherKey: "anotherCount"
+    };
 
-    document.getElementById('notificationp').innerText = "Test 8";
-
-
-
-    // let count = -1;
-
-    // window.Telegram.WebApp.CloudStorage.setItem("count", count);
-    // console.log("Запись прошла");
-
-    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
-    //     if (err || !count) {
-    //         console.log("Ошибка возврата");
-    //     }
-    //     console.log(`возврат успешный ${count}`);
-    // });
-
-    // count++;
-
-
-
-    // let count = 1; // Начальное значение
-
-    // let currentCount;
-    // // Получаем значение count из CloudStorage
-    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, value) => {
-    //     if (err) {
-    //         console.log(`Ошибка получения ${value}`);
-    //         return;
-    //     }
-    
-    //     // Преобразуем строку в число
-    //     currentCount = parseInt(value, 10);
-    //     console.log(`преобразовал значение число ${currentCount}`);
-    //     console.log(`преобразовал значение строка ${value}`);
-    //     document.getElementById('notification-count').innerText = currentCount;
-    // });
-    // currentCount ++;
-    // // Сохраняем значение count в CloudStorage
-    // window.Telegram.WebApp.CloudStorage.setItem("count", currentCount, (err) => {
-    //     if (err) {
-    //         console.log(`Ошибка сохранения ${currentCount}`);
-    //     }
-    // });
-
-
-    // const { refreshToken, accessToken } = dataProvider;
-    window.Telegram.WebApp.CloudStorage.setItem("accessToken", accessToken);
-    window.Telegram.WebApp.CloudStorage.setItem("refreshToken", refreshToken);
-    console.log(`accessToken ${accessToken}`);
-    console.log(`refreshToken ${refreshToken}`);
-    window.Telegram.WebApp.CloudStorage.getItem("accessToken", (err, accessToken) => {
-        if (err || !accessToken) {
-            console.log(`ошибка получения`);
-            return getAccessToken();
-        }
-        console.log(`accessToken2 ${accessToken}`);
-    });
-    
-    window.Telegram.WebApp.CloudStorage.getItem("refreshToken", (err, refreshToken) => {
-        if (err || !refreshToken) {
-            console.log(`ошибка получения2`);
-            return getRefreshToken();
-        }
-        console.log(`refreshToken2 ${refreshToken}`);
-    });
-
+    // Функция для отправки данных
+        // tg.sendData(JSON.stringify(count));
 
 
 
