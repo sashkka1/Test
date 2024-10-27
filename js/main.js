@@ -41,13 +41,13 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notification-count').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 1";
 
 
 
-    // console.log(`user.username ${user.username}`);
-    how_tma()
-
+    console.log(`user.username ${user.username}`);
+    how_tma();
+    console.log(`user.username ${user.username}`);
 
     
     let count = {
