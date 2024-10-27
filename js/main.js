@@ -27,13 +27,30 @@ function how_tma(){
     };
     window.Telegram.WebApp.CloudStorage.setItem('initDat', JSON.stringify(count))
 
-    window.Telegram.WebApp.getItem('initDat').then((data, err) => {
+    window.Telegram.WebApp.CloudStorage.getItem('initDat').then((data, err) => {
         if(data && !err) {
         console.log(JSON.parse(data))
         } else {
         console.log(err)
         }
         })
+}
+
+function getname() {
+    let name = localStorage.getItem('name');
+    if (!name) {
+        // name = URL.createObjectURL(new Blob()).substring(9);
+        // localStorage.setItem('name', name);
+    }
+    return name;
+}
+function setname() {
+    let name = localStorage.setItem('name');
+    if (!name) {
+        name = 'bbbbbbbbbb'
+        localStorage.setItem('name', name);
+    }
+    return name;
 }
 
 function cloud_i(){
@@ -68,7 +85,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 3";
+    document.getElementById('notificationp').innerHTML = "Test 4";
 
 
 
@@ -76,9 +93,11 @@ window.onload = function () {
     how_tma()
     console.log(`user.username ${user.username}`);
 
-    
-
-
+    // let name= 'aaaaaaaaaa'
+    // setname();
+    // console.log(`name до ${name}`);
+    // name = getname();
+    // console.log(`name после ${name}`);
 
 
 }
