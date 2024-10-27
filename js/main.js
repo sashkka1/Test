@@ -10,21 +10,18 @@ function Use_work() {
 }
 
 function how_tma(){
-    // let count;
+    let count =1;
     let newcount;
-    // window.Telegram.WebApp.CloudStorage.setItem("count", count);
-
-    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
-    //     console.log(`вывод успешн ${newcount}`);
-    //     count = newcount;
-    // });
+    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    count =0;
+    window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
+        console.log(`вывод успешн ${newcount}`);
+        count = newcount;
+    });
     // window.Telegram.WebApp.CloudStorage.removeItem("count")
     // count = count + 1;
     // window.Telegram.WebApp.CloudStorage.setItem("count", count);
-    let count = {
-        key: "count",
-        anotherKey: "anotherCount"
-    };
+
     // window.Telegram.WebApp.CloudStorage.setItem('initDat', JSON.stringify(count))
 
     // window.Telegram.WebApp.CloudStorage.getItem('initDat').then((data, err) => {
@@ -38,15 +35,10 @@ function how_tma(){
 
 function getname() {
     let name = localStorage.getItem('name');
-    if (!name) {
-        // name = URL.createObjectURL(new Blob()).substring(9);
-        // localStorage.setItem('name', name);
-    }
     return name;
 }
 function setname() {
     let name = localStorage.setItem('name', name);
-    return name;
 }
 
 function cloud_i(){
@@ -81,7 +73,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 6";
+    document.getElementById('notificationp').innerHTML = "Test 7";
 
 
 
