@@ -21,13 +21,14 @@ function UserLanguage() {
 
 function how_tma(){
     let count =0 ;
+    let newcount;
     window.Telegram.WebApp.CloudStorage.setItem("count", count);
 
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, count) => {
-        if (err || !count) {
-            console.log(`ошибка вывода ${count}`);
+    window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
+        if (err || !newcount) {
+            console.log(`ошибка вывода ${newcount}`);
         } else{
-            console.log(`вывод успешн ${count}`);
+            console.log(`вывод успешн ${newcount}`);
         }
     
     });
@@ -41,7 +42,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
 
 
