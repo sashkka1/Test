@@ -73,18 +73,17 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 7";
+    document.getElementById('notificationp').innerHTML = "Test 8";
 
 
 
-    // console.log(`user.username ${user.username}`);
-    // how_tma()
-    // console.log(`user.username ${user.username}`);
-
-    let name= 'aaaaaaaaaa'
-    setname();
+    console.log(`user.username ${user.username}`);
+    how_tma()
+    console.log(`user.username ${user.username}`);
+    let name= 'aaaaaaaaaa';
+    localStorage.setItem('name', name);
     console.log(`name до ${name}`);
-    name = getname();
+    name = localStorage.getItem('name');
     console.log(`name после ${name}`);
 
 
