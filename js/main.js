@@ -14,13 +14,23 @@ function how_tma(){
     let newcount;
     // window.Telegram.WebApp.CloudStorage.setItem("count", count);
 
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
-        console.log(`вывод успешн ${newcount}`);
-        count = newcount;
-    });
-    window.Telegram.WebApp.CloudStorage.removeItem("count")
-    count = count + 1;
-    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    // window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
+    //     console.log(`вывод успешн ${newcount}`);
+    //     count = newcount;
+    // });
+    // window.Telegram.WebApp.CloudStorage.removeItem("count")
+    // count = count + 1;
+    // window.Telegram.WebApp.CloudStorage.setItem("count", count);
+
+    window.Telegram.WebApp.CloudStorage.setStorageItem('initDat', JSON.stringify(this.initDataUnsafe))
+
+    window.Telegram.WebApp.getStorageItem('initDat').then((data, err) => {
+        if(data && !err) {
+        console.log(JSON.parse(data))
+        } else {
+        console.log(err)
+        }
+        })
 }
 
 function cloud_i(){
@@ -55,7 +65,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 9";
+    document.getElementById('notificationp').innerHTML = "Test 1";
 
 
 
