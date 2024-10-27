@@ -15,16 +15,19 @@ function Use_work() {
     localStorage.setItem('count', count);
 }
 
+
 function how_tma(){
-    let Name;
-    let NewName;
+    const Name= '';
+    const NewName='';
     console.log(`вывод 0  ${Name}`);
     // Name ="asdf";
     // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
     // Name ="asdasdasdasd";
     window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
-        console.log(`вывод 1  ${NewName}`);
+        console.log(`вывод 5  ${NewName}`);
+        return NewName;
     });
+    
     console.log(`вывод 1  ${NewName}`);
     if(NewName !== ''){
         Name ="asdf";
@@ -59,7 +62,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
     how_tma()
 
