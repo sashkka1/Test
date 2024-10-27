@@ -54,21 +54,6 @@ function how_tma(){
     //     })
 }
 
-function getcount(){
-    let a;
-    // console.log(`вывод 0  ${a}`);
-    window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
-        console.log(`вывод 1  ${NewName}`);
-        a = NewName + NewName;
-        console.log(`вывод 2  ${a}`);
-    });
-    console.log(`вывод 3 ${a}`);
-    return a;
-}
-
-function setcount( b){
-    window.Telegram.WebApp.CloudStorage.setItem("Name", b);
-}
 
 window.onload = function () {
     // UserUsername();
@@ -77,28 +62,39 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 10";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
 
-    let NewName='';
-    // let Name = window.Telegram.WebApp.CloudStorage.getItem("Name", (err, Name) => {
-    //     NewName = JSON.stringify(Name);
-    //     return NewName; 
-    //     });
-    // console.log(`вывод 0  ${NewName}`);
+    let NewName;
+    document.getElementById('notification-count').innerHTML = `count ${Name}` ;
+    window.Telegram.WebApp.CloudStorage.getItem("Name", (err, Name) => {
+        console.log(`вывод 1  ${Name}`);
+        if (!Name) {
+            console.log(`вывод 2  ${Name}`);
+            Name =0;
+        } else{
+            console.log(`вывод 3  ${Name}`);
+            NewName = Name;
+            console.log(`вывод 4  ${NewName}`);
+        document.getElementById('notification-count').innerHTML = `count ${Name}` ;
+        Name++;
+        }
+        document.getElementById('notification-count').innerHTML = `count ${Name}` ;
+    });
+
     // Name ="asdf";
     // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
     // Name ="asdasdasdasd";
 
 
-    let name;
+    // let name;
 
-    // name = getcount();
-    if (!name) {
-        console.log(`вывод 4  ${name}`);
-    let aaa='asdf';
-    setcount(aaa);
-    }
+    // // name = getcount();
+    // if (!name) {
+    //     console.log(`вывод 4  ${name}`);
+    // let aaa='asdf';
+    // setcount(aaa);
+    // }
     // console.log(`вывод 4  ${name}`);
     // let aaa='asdf';
     // setcount(aaa);
