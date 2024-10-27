@@ -62,9 +62,29 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 2";
+    document.getElementById('notificationp').innerHTML = "Test 3";
 
-    how_tma()
+    let Name= '';
+    let NewName = window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => { return NewName; }); ;
+    console.log(`вывод 0  ${NewName}`);
+    // Name ="asdf";
+    // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
+    // Name ="asdasdasdasd";
+    // window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
+    //     console.log(`вывод 5  ${NewName}`);
+    //     return NewName;
+    // });
+
+    if(NewName !== ''){
+        Name ="asdf";
+        console.log(`вывод 2  ${Name}`);
+    }else{
+        console.log(`вывод 3  ${NewName}`);
+        Name = NewName + NewName;
+        console.log(`вывод 4  ${Name}`);
+    }
+    document.getElementById('notification-count').innerHTML = `Имя ${Name}`;
+    window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
 
 
 
