@@ -41,7 +41,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
 
     if(user.is_premium !== undefined){
@@ -58,12 +58,17 @@ window.onload = function () {
     how_tma()
     console.log(`user.username ${user.username}`);
 
+    let count = localStorage.getItem('count');
+    document.getElementById('notification-count').innerHTML = `Счет ${count}`;
+    count++;
+    localStorage.setItem('count', count);
+
     // let name= 'aaaaaaaaaa';
     // localStorage.setItem('name', name);
     // console.log(`name до ${name}`);
-    let name= 's';
-    name = localStorage.getItem('name');
-    console.log(`name после ${name}`);
-
+    // // let count= 's';
+    // count = localStorage.getItem('count');
+    // console.log(`count после ${count}`);
+    // document.getElementById('notification-count').innerHTML = `Счет ${}`;
 
 }
