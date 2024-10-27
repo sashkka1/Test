@@ -20,7 +20,7 @@ function UserLanguage() {
 }
 
 function how_tma(){
-    let count =0 ;
+    let count;
     let newcount;
     // window.Telegram.WebApp.CloudStorage.setItem("count", count);
 
@@ -30,9 +30,24 @@ function how_tma(){
         } else{
             console.log(`вывод успешн ${newcount}`);
         }
-    
+        count = newcount;
     });
-    
+    count = count + 1;
+    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+}
+
+function get(){
+    const tg = window.Telegram.WebApp;
+    console.log(`tg.UserLanguage ${tg.UserLanguage}`);
+    console.log(`tg.themeParams.bg_color ${tg.themeParams.bg_color}`);
+    console.log(`tg.colorScheme ${tg.colorScheme}`);
+    console.log(`tg.initDataUnsafe.auth_date ${tg.initDataUnsafe.auth_date}`);
+    console.log(`tg.initDataUnsafe.chat.photo_url ${tg.initDataUnsafe.chat.photo_url}`);
+    console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.receiver.is_premium}`);
+    console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.receiver.photo_url}`);
+    console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.user.is_premium}`);
+    console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.user.photo_url}`);
+
 }
 
 
@@ -43,7 +58,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 3";
+    document.getElementById('notificationp').innerHTML = "Test 4";
 
 
 
