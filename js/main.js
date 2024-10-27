@@ -41,18 +41,27 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 9";
+    document.getElementById('notificationp').innerHTML = "Test 1";
 
 
+    if(user.is_premium !== undefined){
+        if(user.is_premium){
+            isUserPremium = true;
+            console.log(`премиум ${isUserPremium}`);
+        } else{
+            console.log(`не премиум ${isUserPremium}`);
+        }
+
+    }
 
     console.log(`user.username ${user.username}`);
     how_tma()
     console.log(`user.username ${user.username}`);
 
-    let name= 'aaaaaaaaaa';
-    localStorage.setItem('name', name);
-    console.log(`name до ${name}`);
-    name= 's';
+    // let name= 'aaaaaaaaaa';
+    // localStorage.setItem('name', name);
+    // console.log(`name до ${name}`);
+    let name= 's';
     name = localStorage.getItem('name');
     console.log(`name после ${name}`);
 
