@@ -25,15 +25,15 @@ function how_tma(){
         key: "count",
         anotherKey: "anotherCount"
     };
-    window.Telegram.WebApp.CloudStorage.setItem('initDat', JSON.stringify(count))
+    // window.Telegram.WebApp.CloudStorage.setItem('initDat', JSON.stringify(count))
 
-    window.Telegram.WebApp.CloudStorage.getItem('initDat').then((data, err) => {
-        if(data && !err) {
-        console.log(JSON.parse(data))
-        } else {
-        console.log(err)
-        }
-        })
+    // window.Telegram.WebApp.CloudStorage.getItem('initDat').then((data, err) => {
+    //     if(data && !err) {
+    //     console.log(JSON.parse(data))
+    //     } else {
+    //     console.log(err)
+    //     }
+    //     })
 }
 
 function getname() {
@@ -85,19 +85,19 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 4";
+    document.getElementById('notificationp').innerHTML = "Test 5";
 
 
 
-    console.log(`user.username ${user.username}`);
-    how_tma()
-    console.log(`user.username ${user.username}`);
+    // console.log(`user.username ${user.username}`);
+    // how_tma()
+    // console.log(`user.username ${user.username}`);
 
-    // let name= 'aaaaaaaaaa'
-    // setname();
-    // console.log(`name до ${name}`);
-    // name = getname();
-    // console.log(`name после ${name}`);
+    let name= 'aaaaaaaaaa'
+    setname();
+    console.log(`name до ${name}`);
+    name = getname();
+    console.log(`name после ${name}`);
 
 
 }
