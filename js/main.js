@@ -13,7 +13,7 @@ function how_tma(){
     let count =1;
     let newcount;
     window.Telegram.WebApp.CloudStorage.setItem("count", count);
-    count =0;
+    // count =0;
     window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
         console.log(`вывод успешн ${newcount}`);
         count = newcount;
@@ -33,38 +33,6 @@ function how_tma(){
     //     })
 }
 
-function getname() {
-    let name = localStorage.getItem('name');
-    return name;
-}
-function setname() {
-    let name = localStorage.setItem('name', name);
-}
-
-function cloud_i(){
-    let count= 11;
-    let newcount;
-    const tg = window.Telegram.WebApp.CloudStorage;
-
-    tg.setItem("count", count);
-    newcount = getItem("count");
-}
-
-function get(){
-    const tg = window.Telegram.WebApp;
-    // console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.receiver.is_premium}`);
-    // console.log(`tg.initDataUnsafe.receiver.is_premium ${tg.initDataUnsafe.user.is_premium}`);
-    // console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.receiver.photo_url}`);
-    // console.log(`tg.initDataUnsafe.receiver.photo_url ${tg.initDataUnsafe.user.photo_url}`);
-    // console.log(`tg.initData ${}`);
-    // console.log(`tg.initData ${tg.initData}`);
-    // console.log(`tg.initData ${tg.initData}`);
-    // console.log(`tg.initData ${tg.initData}`);
-    // console.log(`tg.initData ${tg.initData}`);
-    // console.log(`tg.initData ${tg.initData}`);
-
-}
-
 
 window.onload = function () {
     // UserUsername();
@@ -73,16 +41,18 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 8";
+    document.getElementById('notificationp').innerHTML = "Test 9";
 
 
 
     console.log(`user.username ${user.username}`);
     how_tma()
     console.log(`user.username ${user.username}`);
+
     let name= 'aaaaaaaaaa';
     localStorage.setItem('name', name);
     console.log(`name до ${name}`);
+    name= 's';
     name = localStorage.getItem('name');
     console.log(`name после ${name}`);
 
