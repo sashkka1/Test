@@ -45,11 +45,7 @@ function getname() {
     return name;
 }
 function setname() {
-    let name = localStorage.setItem('name');
-    if (!name) {
-        name = 'bbbbbbbbbb'
-        localStorage.setItem('name', name);
-    }
+    let name = localStorage.setItem('name', name);
     return name;
 }
 
@@ -85,7 +81,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 5";
+    document.getElementById('notificationp').innerHTML = "Test 6";
 
 
 
