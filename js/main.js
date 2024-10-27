@@ -54,6 +54,21 @@ function how_tma(){
     //     })
 }
 
+function getcount(){
+    let a;
+    // console.log(`вывод 0  ${a}`);
+    window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
+        console.log(`вывод 1  ${NewName}`);
+        a = NewName + NewName;
+        console.log(`вывод 2  ${a}`);
+    });
+    console.log(`вывод 3 ${a}`);
+    return a;
+}
+
+function setcount( b){
+    window.Telegram.WebApp.CloudStorage.setItem("Name", b);
+}
 
 window.onload = function () {
     // UserUsername();
@@ -62,7 +77,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 7";
+    document.getElementById('notificationp').innerHTML = "Test 8";
 
 
     let NewName='';
@@ -74,15 +89,27 @@ window.onload = function () {
     // Name ="asdf";
     // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
     // Name ="asdasdasdasd";
-    let a;
-    console.log(`вывод 0  ${a}`);
-    window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
-        console.log(`вывод 1  ${NewName}`);
-        a = NewName + NewName;
-        console.log(`вывод 2  ${a}`);
-    });
-    console.log(`вывод 3  ${a}`);
-    window.Telegram.WebApp.CloudStorage.setItem("Name", a);
+
+
+
+    let name = getcount();
+    console.log(`вывод 4  ${name}`);
+    setcount(name);
+
+    // let a;
+    // console.log(`вывод 0  ${a}`);
+    // window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
+    //     console.log(`вывод 1  ${NewName}`);
+    //     a = NewName + NewName;
+    //     console.log(`вывод 2  ${a}`);
+    // });
+    // console.log(`вывод 3  ${a}`);
+    // window.Telegram.WebApp.CloudStorage.setItem("Name", a);
+
+
+
+
+
 
     // let Name = window.Telegram.WebApp.CloudStorage.getItem("Name", (err, Name) => {
     //     NewName = JSON.stringify(Name);
