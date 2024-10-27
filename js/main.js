@@ -32,6 +32,7 @@ function how_tma(){
         }
     
     });
+    
 }
 
 
@@ -42,7 +43,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 2";
+    document.getElementById('notificationp').innerHTML = "Test 3";
 
 
 
