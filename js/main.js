@@ -22,7 +22,7 @@ function UserLanguage() {
 function how_tma(){
     let count =0 ;
     let newcount;
-    window.Telegram.WebApp.CloudStorage.setItem("count", count);
+    // window.Telegram.WebApp.CloudStorage.setItem("count", count);
 
     window.Telegram.WebApp.CloudStorage.getItem("count", (err, newcount) => {
         if (err || !newcount) {
