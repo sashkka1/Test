@@ -22,12 +22,12 @@ function how_tma(){
     // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
     // Name ="asdasdasdasd";
     window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => {
-        console.log(`вывод успешн ${NewName}`);
         if(NewName !== undefined){
             Name = NewName + NewName;
         }else{
             Name ="asdf";
         }
+        console.log(`вывод успешн ${Name}`);
     });
     document.getElementById('notification-count').innerHTML = `Имя ${Name}`;
     window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
@@ -54,7 +54,7 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 6";
+    document.getElementById('notificationp').innerHTML = "Test 7";
 
     how_tma()
 
