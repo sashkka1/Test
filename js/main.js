@@ -62,10 +62,11 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 2";
+    document.getElementById('notificationp').innerHTML = "Test 3";
 
 
     let NewName;
+    let Name;
     document.getElementById('notification-count').innerHTML = `count ${Name}` ;
     window.Telegram.WebApp.CloudStorage.getItem("Name", (err, Name) => {
         console.log(`вывод 1  ${Name}`);
