@@ -62,10 +62,14 @@ window.onload = function () {
     const user = window.Telegram.WebApp.initDataUnsafe.user;
 
 
-    document.getElementById('notificationp').innerHTML = "Test 3";
+    document.getElementById('notificationp').innerHTML = "Test 4";
 
-    let Name= '';
-    let NewName = window.Telegram.WebApp.CloudStorage.getItem("Name", (err, NewName) => { return NewName; }); ;
+
+    let NewName='';
+    let Name = window.Telegram.WebApp.CloudStorage.getItem("Name", (err, Name) => {
+        NewName = JSON.stringify(Name);
+        return NewName; 
+        });
     console.log(`вывод 0  ${NewName}`);
     // Name ="asdf";
     // window.Telegram.WebApp.CloudStorage.setItem("Name", Name);
@@ -75,12 +79,12 @@ window.onload = function () {
     //     return NewName;
     // });
 
-    if(NewName !== ''){
+    if(Name !== ''){
         Name ="asdf";
         console.log(`вывод 2  ${Name}`);
     }else{
-        console.log(`вывод 3  ${NewName}`);
-        Name = NewName + NewName;
+        console.log(`вывод 3  ${Name}`);
+        Name = Name + Name;
         console.log(`вывод 4  ${Name}`);
     }
     document.getElementById('notification-count').innerHTML = `Имя ${Name}`;
