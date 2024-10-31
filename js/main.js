@@ -41,5 +41,5 @@ window.onload = function () {
 
     const tg = window.Telegram.WebApp;
     console.log(`viewportHeight ${tg.viewportHeight}`);
-    console.log(`viewportStableHeight ${tg.viewportStableHeight}`);
+    // console.log(`viewportStableHeight ${tg.viewportStableHeight}`);
 }
