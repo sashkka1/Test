@@ -39,6 +39,8 @@ function Use_work() {
 
 window.onload = function () {
 
-    document.getElementById('notificationp').innerHTML = "Test 2";
-
+    document.getElementById('notificationp').innerHTML = "Test 3";
+    console.log(`tg.themeParams.bg_color  ${tg.themeParams.bg_color}`);
+    console.log(`tg.colorScheme  ${tg.colorScheme}`);
+    console.log(`tg.initDataUnsafe.auth_date ${tg.initDataUnsafe.auth_date}`);
 }
