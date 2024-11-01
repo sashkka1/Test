@@ -1,6 +1,18 @@
 "use strict";
 
-function Use_work() {
+
+
+
+
+
+function DontWork(){
+    console.log(`tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
+    console.log(`tg.initDataUnsafe.user.username  ${tg.initDataUnsafe.user.username}`);// done
+    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
+    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
+    console.log(`tg.initDataUnsafe.chat.id  ${tg.initDataUnsafe.chat.id}`);// TypeError: Cannot read properties of undefined
+}
+function UseWork() {
     const tg = window.Telegram.WebApp;
     tg.initDataUnsafe.user.language_code
     tg.initDataUnsafe.user.username
@@ -33,27 +45,20 @@ function Use_work() {
     });
 
     tg.expand();
+    tg.disableVerticalSwipes();
 }
 
 
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    document.getElementById('notificationp').innerHTML = "Test 2";
-
     tg.expand();
-    tg.disableVerticalSwipes();
+    document.getElementById('notificationp').innerHTML = "Test 3";
 
-    console.log(` tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);
-    console.log(`tg.initDataUnsafe.user.username  ${tg.initDataUnsafe.user.username}`);
-    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);
-    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);
-    console.log(`tg.initDataUnsafe.chat.id  ${tg.initDataUnsafe.chat.id}`);
-    console.log(`tg.initDataUnsafe.user.id  ${tg.initDataUnsafe.user.id}`);
-    console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);
-    console.log(`tg.initDataUnsafe.chat.username  ${tg.initDataUnsafe.chat.username}`);
-    console.log(`tg.initDataUnsafe.chat.photo_url  ${tg.initDataUnsafe.chat.photo_url}`);
-    console.log(`tg.initDataUnsafe  ${tg.initDataUnsafe}`);
-    console.log(`tg.initDataUnsafe  ${tg.initDataUnsafe}`);
+
+    console.log(`tg.initDataUnsafe.user.id  ${tg.initDataUnsafe.user.id}`);// 
+    console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);// 
+    console.log(`tg.initDataUnsafe.chat.username  ${tg.initDataUnsafe.chat.username}`);// 
+    console.log(`tg.initDataUnsafe.chat.photo_url  ${tg.initDataUnsafe.chat.photo_url}`);// 
 
 }
