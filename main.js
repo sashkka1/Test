@@ -7,10 +7,10 @@
 
 function DontWork(){
     console.log(`tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
-    console.log(`tg.initDataUnsafe.user.username  ${tg.initDataUnsafe.user.username}`);// done
     console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
     console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
     console.log(`tg.initDataUnsafe.chat.id  ${tg.initDataUnsafe.chat.id}`);// TypeError: Cannot read properties of undefined
+    console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);// TypeError: Cannot read properties of undefined
 }
 function UseWork() {
     const tg = window.Telegram.WebApp;
@@ -19,7 +19,7 @@ function UseWork() {
     tg.themeParams.bg_color
     tg.colorScheme
     tg.initDataUnsafe.auth_date
-
+    tg.initDataUnsafe.user.id
 
     let count = localStorage.getItem('count');
     document.getElementById('notification-count').innerHTML = `Счет ${count}`;
@@ -53,11 +53,10 @@ function UseWork() {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand();
-    document.getElementById('notificationp').innerHTML = "Test 3";
+    document.getElementById('notificationp').innerHTML = "Test 4";
 
 
-    console.log(`tg.initDataUnsafe.user.id  ${tg.initDataUnsafe.user.id}`);// 
-    console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);// 
+
     console.log(`tg.initDataUnsafe.chat.username  ${tg.initDataUnsafe.chat.username}`);// 
     console.log(`tg.initDataUnsafe.chat.photo_url  ${tg.initDataUnsafe.chat.photo_url}`);// 
 
