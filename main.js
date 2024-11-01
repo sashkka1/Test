@@ -39,10 +39,9 @@ function Use_work() {
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    document.getElementById('notificationp').innerHTML = "Test 7";
+    document.getElementById('notificationp').innerHTML = "Test 1";
 
 
-    tg.initDataUnsafe.chat.photo_url
 
     console.log(` tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);
     console.log(`tg.initDataUnsafe.user.username  ${tg.initDataUnsafe.user.username}`);
