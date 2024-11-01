@@ -39,9 +39,10 @@ function Use_work() {
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
-
+    tg.expand();
+    tg.disableVerticalSwipes();
 
     console.log(` tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);
     console.log(`tg.initDataUnsafe.user.username  ${tg.initDataUnsafe.user.username}`);
@@ -54,6 +55,5 @@ window.onload = function () {
     console.log(`tg.initDataUnsafe.chat.photo_url  ${tg.initDataUnsafe.chat.photo_url}`);
     console.log(`tg.initDataUnsafe  ${tg.initDataUnsafe}`);
     console.log(`tg.initDataUnsafe  ${tg.initDataUnsafe}`);
-    tg.enableVerticalSwipes()
 
 }
