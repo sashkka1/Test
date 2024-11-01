@@ -39,11 +39,11 @@ function Use_work() {
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    document.getElementById('notificationp').innerHTML = "Test 4";
+    document.getElementById('notificationp').innerHTML = "Test 5";
 
 
 
-
+    console.log(`tg.version  ${tg.version}`);
     console.log(`tg.themeParams.bg_color  ${tg.themeParams.bg_color}`);
     console.log(`tg.colorScheme  ${tg.colorScheme}`);
     console.log(`tg.initDataUnsafe.auth_date ${tg.initDataUnsafe.auth_date}`);
