@@ -39,12 +39,22 @@ function Use_work() {
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    document.getElementById('notificationp').innerHTML = "Test 6";
+    document.getElementById('notificationp').innerHTML = "Test 7";
 
+
+    tg.initDataUnsafe.chat.photo_url
+
+    console.log(` tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);
+    console.log(`tg.initDataUnsafe.user.username  ${tg.initDataUnsafe.user.username}`);
+    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);
+    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);
+    console.log(`tg.initDataUnsafe.chat.id  ${tg.initDataUnsafe.chat.id}`);
+    console.log(`tg.initDataUnsafe.user.id  ${tg.initDataUnsafe.user.id}`);
+    console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);
+    console.log(`tg.initDataUnsafe.chat.username  ${tg.initDataUnsafe.chat.username}`);
+    console.log(`tg.initDataUnsafe.chat.photo_url  ${tg.initDataUnsafe.chat.photo_url}`);
+    console.log(`tg.initDataUnsafe  ${tg.initDataUnsafe}`);
+    console.log(`tg.initDataUnsafe  ${tg.initDataUnsafe}`);
     tg.enableVerticalSwipes()
 
-    console.log(`tg.version  ${tg.version}`);
-    console.log(`tg.themeParams.bg_color  ${tg.themeParams.bg_color}`);
-    console.log(`tg.colorScheme  ${tg.colorScheme}`);
-    console.log(`tg.initDataUnsafe.auth_date ${tg.initDataUnsafe.auth_date}`);
 }
