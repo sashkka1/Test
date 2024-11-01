@@ -37,9 +37,13 @@ function Use_work() {
 
 window.onload = function () {
 
-    document.getElementById('notificationp').innerHTML = "Test 6";
+    document.getElementById('notificationp').innerHTML = "Test 7";
 
     const tg = window.Telegram.WebApp;
+    // console.log(`viewportHeight ${tg.viewportHeight}`);
+    console.log(`viewportStableHeight ${tg.viewportStableHeight}`);
     console.log(`viewportHeight ${tg.viewportHeight}`);
-    // console.log(`viewportStableHeight ${tg.viewportStableHeight}`);
+    console.log(`isVerticalSwipesEnabled  ${tg.isVerticalSwipesEnabled }`);
+    // console.log(`viewportHeight ${tg.viewportHeight}`);
+    // console.log(`viewportHeight ${tg.viewportHeight}`);
 }
