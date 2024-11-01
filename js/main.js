@@ -40,12 +40,12 @@ window.onload = function () {
     document.getElementById('notificationp').innerHTML = "Test 1";
 
     const tg = window.Telegram.WebApp;
-    // console.log(`viewportHeight ${tg.viewportHeight}`);
+    console.log(`viewportHeight ${tg.viewportHeight}`);
     // console.log(`viewportStableHeight ${tg.viewportStableHeight}`);
     // // console.log(`viewportHeight ${tg.viewportHeight}`);
     // console.log(`isVerticalSwipesEnabled  ${tg.isVerticalSwipesEnabled }`);
     tg.expand();
-    tg.viewportStableHeight
+    // tg.viewportStableHeight
     // tg.viewportHeight;
     // console.log(`viewportHeight ${tg.viewportHeight}`);
     // console.log(`viewportHeight ${tg.viewportHeight}`);
