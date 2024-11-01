@@ -12,6 +12,7 @@ function DontWork(){
     console.log(`tg.initDataUnsafe.chat.id  ${tg.initDataUnsafe.chat.id}`);// TypeError: Cannot read properties of undefined
     console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);// TypeError: Cannot read properties of undefined
 }
+
 function UseWork() {
     const tg = window.Telegram.WebApp;
     tg.initDataUnsafe.user.language_code
@@ -55,9 +56,5 @@ window.onload = function () {
     tg.expand();
     document.getElementById('notificationp').innerHTML = "Test 4";
 
-
-
-    console.log(`tg.initDataUnsafe.chat.username  ${tg.initDataUnsafe.chat.username}`);// 
-    console.log(`tg.initDataUnsafe.chat.photo_url  ${tg.initDataUnsafe.chat.photo_url}`);// 
 
 }
