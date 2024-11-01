@@ -39,9 +39,9 @@ function Use_work() {
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    document.getElementById('notificationp').innerHTML = "Test 5";
+    document.getElementById('notificationp').innerHTML = "Test 6";
 
-
+    tg.enableVerticalSwipes()
 
     console.log(`tg.version  ${tg.version}`);
     console.log(`tg.themeParams.bg_color  ${tg.themeParams.bg_color}`);
