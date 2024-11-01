@@ -37,7 +37,7 @@ function Use_work() {
 
 window.onload = function () {
 
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
 
     const tg = window.Telegram.WebApp;
     console.log(`viewportHeight ${tg.viewportHeight}`);
