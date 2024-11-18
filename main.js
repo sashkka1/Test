@@ -55,10 +55,10 @@ function UseWork() {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand();
-    document.getElementById('notificationp').innerHTML = "Test 5";
+    document.getElementById('notificationp').innerHTML = "Test 6";
     console.log('one');
     // tg.addToHomeScreen();
-    console.log(`isFullscreen - ${isFullscreen}`);
+    console.log(`isFullscreen - ${tg.isFullscreen}`);
     console.log('two');
     tg.requestFullscreen();
     console.log('three');
