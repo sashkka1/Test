@@ -57,7 +57,8 @@ window.onload = function () {
     tg.expand();
     document.getElementById('notificationp').innerHTML = "Test 4";
     console.log('one');
-    tg.addToHomeScreen();
+    // tg.addToHomeScreen();
+    console.log(`isFullscreen - ${isFullscreen}`);
     console.log('two');
     tg.requestFullscreen();
     console.log('three');
