@@ -21,6 +21,7 @@ function UseWork() {
     tg.colorScheme
     tg.initDataUnsafe.auth_date
     tg.initDataUnsafe.user.id
+    tg.platform
 
     let count = localStorage.getItem('count');
     document.getElementById('notification-count').innerHTML = `Счет ${count}`;
@@ -55,6 +56,10 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand();
     document.getElementById('notificationp').innerHTML = "Test 4";
-
+    console.log('one');
+    tg.addToHomeScreen();
+    console.log('two');
+    tg.requestFullscreen();
+    console.log('three');
 
 }
