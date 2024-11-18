@@ -55,12 +55,14 @@ function UseWork() {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand();
-    document.getElementById('notificationp').innerHTML = "Test 6";
-    console.log('one');
+    document.getElementById('notificationp').innerHTML = "Test 8";
+    console.log(tg.version);
+    telegram.WebApp.getState().then((state) => {
+        const isFullscreen = state.isFullscreen;
+        console.log("Is fullscreen:", isFullscreen);
+    });
     // tg.addToHomeScreen();
-    console.log(`isFullscreen - ${tg.isFullscreen}`);
-    console.log('two');
-    tg.requestFullscreen();
-    console.log('three');
+    // console.log(`isFullscreen - ${tg.isFullscreen}`);
+    // tg.requestFullscreen();
 
 }
