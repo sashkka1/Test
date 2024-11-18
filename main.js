@@ -55,7 +55,7 @@ function UseWork() {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand();
-    document.getElementById('notificationp').innerHTML = "Test 8";
+    document.getElementById('notificationp').innerHTML = tg.version;
     console.log(tg.version);
     telegram.WebApp.getState().then((state) => {
         const isFullscreen = state.isFullscreen;
