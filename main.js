@@ -56,15 +56,8 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand();
     document.getElementById('notificationp').innerHTML = "Test 6";
-    console.log(tg.version);
-    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);
-    window.telegram.WebApp.getState().then((state) => {
-        const isFullscreen = state.isFullscreen;
-        console.log("Is fullscreen:", isFullscreen);
-    });
-    // tg.addToHomeScreen();
-    // console.log(`isFullscreen - ${tg.isFullscreen}`);
-    // tg.requestFullscreen();
+    console.log(`tg.version - ${tg.version}`);
+
+    
 
 }
