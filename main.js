@@ -63,7 +63,7 @@ async function setItemInCloudStorage() {
 async function getItemFromCloudStorage() {
     const storedArray = await window.Telegram.WebApp.CloudStorage.getItem('arrayTest');
     console.log(`get storedArray  ${storedArray}`);
-    console.table(storedArray);
+    console.table(storedArray.getItem);
     console.log(`get storedArray2  ${storedArray[0]}`);
     for(let i=0;i<10;i++){
 
@@ -75,6 +75,8 @@ async function getItemFromCloudStorage() {
     } else {
         console.log('Массив не найден в облачном хранилище.');
     }
+    console.table(storedArray.getItem);
+    console.table(storedArray.getItem('arrayTest'));
 }
 
 let block = document.getElementById('set');
