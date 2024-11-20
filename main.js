@@ -50,14 +50,62 @@ function UseWork() {
     tg.disableVerticalSwipes();
 }
 
+async function setItemInCloudStorage() {
+    let array = [1,2,3,4];
+    console.table(array);
+    
+    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', JSON.stringify(array));
+    console.log('set');
+}
 
+
+async function getItemFromCloudStorage() {
+    const storedArray = await window.Telegram.WebApp.CloudStorage.getItem('arrayTest');
+    console.log(`get storedArray  ${storedArray}`);
+    console.table(storedArray);
+    console.log(`get storedArray2  ${storedArray[0]}`);
+    for(let i=0;storedArray;i++){
+
+        console.log(`storedArray  ${storedArray[i]}`);
+    }
+    if (storedArray) {
+        myArray = JSON.parse(storedArray);
+        console.log(`myArray  ${myArray}`);
+    } else {
+        console.log('Массив не найден в облачном хранилище.');
+    }
+}
+
+let block = document.getElementById('set');
+block.addEventListener('click', () => {
+    setItemInCloudStorage();
+});
+block = document.getElementById('get');
+block.addEventListener('click', () => {
+    getItemFromCloudStorage();
+});
+
+    
 
 window.onload = function () {
     const tg = window.Telegram.WebApp;
-    tg.expand();
-    document.getElementById('notificationp').innerHTML = "Test 6";
+    tg.expand(); // максимум высоты принимает по дэфолту
+    document.getElementById('notificationp').innerHTML = "Test 1";
     console.log(`tg.version - ${tg.version}`);
 
+
+
+    document.getElementById('new-game-button').innerHTML = "Test 9";
+    let arrayCardSafe = Array.from(this._allCards);
+
+    let array = [1,2,4,3,6,5,8,7,9,0];
+    let a =1,b,c;
+
+    // tg.setItem("havearray", array);
+    setItemInCloudStorage("getArray",array);
+    console.log('set true');
+    array = getItemFromCloudStorage("getArray");
+    console.table(array);
     
 
 }
