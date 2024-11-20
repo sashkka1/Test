@@ -54,8 +54,8 @@ async function setItemInCloudStorage() {
     // let array = [1,2,3,4];
     let array = 1;
     console.table(array);
-    
-    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', JSON.stringify(array), callback);
+    let callback;
+    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', array, callback);
     console.log(`callback - ${callback}`);
 }
 
@@ -63,20 +63,7 @@ async function setItemInCloudStorage() {
 async function getItemFromCloudStorage() {
     const storedArray = await window.Telegram.WebApp.CloudStorage.getItem('arrayTest');
     console.log(`get storedArray  ${storedArray}`);
-    console.table(storedArray.getItem);
-    console.log(`get storedArray2  ${storedArray[0]}`);
-    for(let i=0;i<10;i++){
-
-        console.log(`storedArray  ${storedArray[i]}`);
-    }
-    if (storedArray) {
-        myArray = JSON.parse(storedArray);
-        console.log(`myArray  ${myArray}`);
-    } else {
-        console.log('Массив не найден в облачном хранилище.');
-    }
-    console.table(storedArray.getItem);
-    console.table(storedArray.getItem('arrayTest'));
+    console.table(storedArray);
 }
 
 let block = document.getElementById('set');
@@ -93,7 +80,7 @@ block.addEventListener('click', () => {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand(); // максимум высоты принимает по дэфолту
-    document.getElementById('notificationp').innerHTML = "Test 3";
+    document.getElementById('notificationp').innerHTML = "Test 4";
     console.log(`tg.version - ${tg.version}`);
 
 
