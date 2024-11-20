@@ -64,7 +64,7 @@ async function getItemFromCloudStorage() {
     console.log(`get storedArray  ${storedArray}`);
     console.table(storedArray);
     console.log(`get storedArray2  ${storedArray[0]}`);
-    for(let i=0;storedArray;i++){
+    for(let i=0;i<10;i++){
 
         console.log(`storedArray  ${storedArray[i]}`);
     }
@@ -90,22 +90,22 @@ block.addEventListener('click', () => {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand(); // максимум высоты принимает по дэфолту
-    document.getElementById('notificationp').innerHTML = "Test 1";
+    document.getElementById('notificationp').innerHTML = "Test 2";
     console.log(`tg.version - ${tg.version}`);
 
 
 
-    document.getElementById('new-game-button').innerHTML = "Test 9";
-    let arrayCardSafe = Array.from(this._allCards);
+    // document.getElementById('new-game-button').innerHTML = "Test 9";
+    // let arrayCardSafe = Array.from(this._allCards);
 
-    let array = [1,2,4,3,6,5,8,7,9,0];
-    let a =1,b,c;
+    // let array = [1,2,4,3,6,5,8,7,9,0];
+    // let a =1,b,c;
 
     // tg.setItem("havearray", array);
-    setItemInCloudStorage("getArray",array);
-    console.log('set true');
-    array = getItemFromCloudStorage("getArray");
-    console.table(array);
+    // setItemInCloudStorage("getArray",array);
+    // console.log('set true');
+    // array = getItemFromCloudStorage("getArray");
+    // console.table(array);
     
 
 }
