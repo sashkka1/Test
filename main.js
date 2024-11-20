@@ -55,8 +55,8 @@ async function setItemInCloudStorage() {
     let array = 1;
     console.table(array);
     
-    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', JSON.stringify(array));
-    console.log('set');
+    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', JSON.stringify(array), callback);
+    console.log(`callback - ${callback}`);
 }
 
 
