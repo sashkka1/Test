@@ -61,9 +61,13 @@ async function setItemInCloudStorage() {
 
 
 async function getItemFromCloudStorage() {
-    const storedArray = await window.Telegram.WebApp.CloudStorage.getItem('arrayTest');
-    console.log(`get storedArray  ${storedArray}`);
-    console.table(storedArray);
+    // const storedArray = await window.Telegram.WebApp.CloudStorage.getItem('arrayTest');
+    // console.log(`get storedArray  ${storedArray}`);
+    // console.table(storedArray);
+    await window.Telegram.WebApp.CloudStorage.getItem("arrayTest", (err, storedArray) => {
+        console.log(`вывод 1  ${Name}`);
+    });
+
 }
 
 let block = document.getElementById('set');
@@ -80,11 +84,25 @@ block.addEventListener('click', () => {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand(); // максимум высоты принимает по дэфолту
-    document.getElementById('notificationp').innerHTML = "Test 4";
+
+    
+    document.getElementById('notificationp').innerHTML = "Test 5";
     console.log(`tg.version - ${tg.version}`);
 
 
-
+    const userData = {
+        name: "John Doe",
+        email: "john.doe@example.com",
+        preferences: {
+            notifications: true,
+            theme: "dark"
+        }
+    };
+    console.table(userData);
+    const jsonString = JSON.stringify(userData);
+    console.table(jsonString);
+    console.table();
+    console.table();
     // document.getElementById('new-game-button').innerHTML = "Test 9";
     // let arrayCardSafe = Array.from(this._allCards);
 
