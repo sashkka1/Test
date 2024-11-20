@@ -51,21 +51,22 @@ function UseWork() {
 }
 
 async function setItemInCloudStorage() {
-    // let array = [1,2,3,4];
+    const timeSlots = [
+        { time: "09:00 AM", available: true },
+        { time: "10:00 AM", available: false },
+        { time: "11:00 AM", available: true }
+    ];
     let array = 1;
-    console.table(array);
-    let callback;
-    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', array, callback);
-    console.log(`callback - ${callback}`);
+    console.table(timeSlots);
+    console.table(JSON.stringify(timeSlots));
+    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', JSON.stringify(timeSlots));
 }
 
 
 async function getItemFromCloudStorage() {
-    // const storedArray = await window.Telegram.WebApp.CloudStorage.getItem('arrayTest');
-    // console.log(`get storedArray  ${storedArray}`);
-    // console.table(storedArray);
     await window.Telegram.WebApp.CloudStorage.getItem("arrayTest", (err, storedArray) => {
         console.log(`вывод 1  ${storedArray}`);
+        console.log(`вывод 2  ${JSON.parse(storedArray)}`);
     });
 
 }
@@ -86,7 +87,7 @@ window.onload = function () {
     tg.expand(); // максимум высоты принимает по дэфолту
 
 
-    document.getElementById('notificationp').innerHTML = "Test 6";
+    document.getElementById('notificationp').innerHTML = "Test 7";
     console.log(`tg.version - ${tg.version}`);
 
 
