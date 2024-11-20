@@ -66,7 +66,7 @@ async function setItemInCloudStorage() {
 async function getItemFromCloudStorage() {
     await window.Telegram.WebApp.CloudStorage.getItem("arrayTest", (err, storedArray) => {
         console.log(`вывод 1  ${storedArray}`);
-        console.log(`вывод 2  ${JSON.parse(storedArray)}`);
+        console.table(JSON.parse(storedArray));
     });
 
 }
@@ -87,7 +87,7 @@ window.onload = function () {
     tg.expand(); // максимум высоты принимает по дэфолту
 
 
-    document.getElementById('notificationp').innerHTML = "Test 7";
+    document.getElementById('notificationp').innerHTML = "Test 8";
     console.log(`tg.version - ${tg.version}`);
 
 
