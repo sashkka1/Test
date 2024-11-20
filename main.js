@@ -67,6 +67,7 @@ async function getItemFromCloudStorage() {
     await window.Telegram.WebApp.CloudStorage.getItem("arrayTest", (err, storedArray) => {
         console.log(`вывод 1  ${storedArray}`);
         console.table(JSON.parse(storedArray));
+        console.log(`вывод 1  ${storedArray[0].time}, вывод 1  ${storedArray[1].available}`);
     });
 
 }
