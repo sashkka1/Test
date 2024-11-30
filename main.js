@@ -86,36 +86,19 @@ block.addEventListener('click', () => {
 window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand(); // максимум высоты принимает по дэфолту
-
-
-    document.getElementById('notificationp').innerHTML = "Test 8";
+    
+    document.getElementById('notificationp').innerHTML = "Test 9";
     console.log(`tg.version - ${tg.version}`);
 
+    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
+    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
+    console.log(`tg.initDataUnsafe.user.language_code  ${tg.initDataUnsafe.user.language_code}`);
+    console.log(`tg.initDataUnsafe.user.id  ${tg.initDataUnsafe.user.id}`);
 
-    const userData = {
-        name: "John Doe",
-        email: "john.doe@example.com",
-        preferences: {
-            notifications: true,
-            theme: "dark"
-        }
-    };
-    console.table(userData);
-    const jsonString = JSON.stringify(userData);
-    console.table(jsonString);
-    console.table();
-    console.table();
-    // document.getElementById('new-game-button').innerHTML = "Test 9";
-    // let arrayCardSafe = Array.from(this._allCards);
+    console.log(tg.isFullscreen); 
+    tg.requestFullscreen();
+    tg.addToHomeScreen();
 
-    // let array = [1,2,4,3,6,5,8,7,9,0];
-    // let a =1,b,c;
 
-    // tg.setItem("havearray", array);
-    // setItemInCloudStorage("getArray",array);
-    // console.log('set true');
-    // array = getItemFromCloudStorage("getArray");
-    // console.table(array);
-    
 
 }
