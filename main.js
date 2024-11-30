@@ -90,13 +90,9 @@ window.onload = function () {
     document.getElementById('notificationp').innerHTML = "Test 9";
     console.log(`tg.version - ${tg.version}`);
 
-    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
-    console.log(`tg.initDataUnsafe.user.language_code  ${tg.initDataUnsafe.user.language_code}`);
-    console.log(`tg.initDataUnsafe.user.id  ${tg.initDataUnsafe.user.id}`);
-
-    console.log(tg.isFullscreen); 
-    tg.requestFullscreen();
+    // console.log(tg.isFullscreen); 
+    // tg.requestFullscreen();
+    // console.log(tg.isFullscreen); 
     tg.addToHomeScreen();
 
 
