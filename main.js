@@ -106,11 +106,17 @@ window.onload = function () {
     console.log('id',tg.initDataUnsafe.user.id); 
     // tg.platform
     console.log('platform',tg.platform); 
+
     // tg.added_to_attachment_menu
     console.log('added_to_attachment_menu',tg.added_to_attachment_menu); 
 
-    window.Telegram.WebApp.checkHomeScreenStatus([callback])
-    console.log('callback',callback);
+    console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
+    console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
+    console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
+
+    let a
+    window.Telegram.WebApp.checkHomeScreenStatus(a)
+    console.log('callback',a);
 
     // console.log(tg.isFullscreen); 
     // tg.requestFullscreen();
