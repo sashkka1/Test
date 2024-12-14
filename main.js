@@ -87,19 +87,41 @@ window.onload = function () {
     const tg = window.Telegram.WebApp;
     tg.expand(); // максимум высоты принимает по дэфолту
     
-    document.getElementById('notificationp').innerHTML = "Test 9";
+    document.getElementById('notificationp').innerHTML = "Test 0";
     console.log(`tg.version - ${tg.version}`);
 
-    console.log(tg.isFullscreen); 
-    tg.requestFullscreen();
-    console.log(tg.isFullscreen); 
-    tg.addToHomeScreen();
-    tg.checkHomeScreenStatus([callback])
-    console.log('checkHomeScreenStatus',callback);
-    tg.requestWriteAccess([message]);
-    console.log('requestWriteAccess',message);
-    tg.requestContact([message2]);
-    console.log('requestContact',message2);
-    tg.showAlert('showAlert');
-    tg.showConfirm('showConfirm')
+
+
+    // tg.initDataUnsafe.user.language_code
+    console.log('language_code',tg.initDataUnsafe.user.language_code); 
+    // tg.initDataUnsafe.user.username
+    console.log('username',tg.initDataUnsafe.user.username); 
+    // tg.themeParams.bg_color
+    console.log('bg_color',tg.themeParams.bg_color); 
+    // tg.colorScheme
+    console.log('colorScheme',tg.colorScheme); 
+    // tg.initDataUnsafe.auth_date
+    console.log('auth_date',tg.initDataUnsafe.auth_date); 
+    // tg.initDataUnsafe.user.id
+    console.log('id',tg.initDataUnsafe.user.id); 
+    // tg.platform
+    console.log('platform',tg.platform); 
+    // tg.added_to_attachment_menu
+    console.log('added_to_attachment_menu',tg.added_to_attachment_menu); 
+
+    window.Telegram.WebApp.checkHomeScreenStatus([callback])
+    console.log('callback',callback);
+
+    // console.log(tg.isFullscreen); 
+    // tg.requestFullscreen();
+    // console.log(tg.isFullscreen); 
+    // tg.addToHomeScreen();
+    // tg.checkHomeScreenStatus([callback])
+    // console.log('checkHomeScreenStatus',callback);
+    // tg.requestWriteAccess([message]);
+    // console.log('requestWriteAccess',message);
+    // tg.requestContact([message2]);
+    // console.log('requestContact',message2);
+    // tg.showAlert('showAlert');
+    // tg.showConfirm('showConfirm')
 }
