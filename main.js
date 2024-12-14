@@ -88,35 +88,44 @@ window.onload = function () {
     tg.expand(); // максимум высоты принимает по дэфолту
     
     document.getElementById('notificationp').innerHTML = "Test 0";
-    console.log(`tg.version - ${tg.version}`);
+    // console.log(`tg.version - ${tg.version}`);
 
-
-
+   
+    let localDate = new Date();
+    let utcDate = new Date().toISOString();
+    console.log(localDate);
+    console.log(utcDate);
     // tg.initDataUnsafe.user.language_code
-    console.log('language_code',tg.initDataUnsafe.user.language_code); 
-    // tg.initDataUnsafe.user.username
-    console.log('username',tg.initDataUnsafe.user.username); 
-    // tg.themeParams.bg_color
-    console.log('bg_color',tg.themeParams.bg_color); 
-    // tg.colorScheme
-    console.log('colorScheme',tg.colorScheme); 
-    // tg.initDataUnsafe.auth_date
-    console.log('auth_date',tg.initDataUnsafe.auth_date); 
-    // tg.initDataUnsafe.user.id
-    console.log('id',tg.initDataUnsafe.user.id); 
-    // tg.platform
-    console.log('platform',tg.platform); 
+    // console.log('language_code',tg.initDataUnsafe.user.language_code); 
+    // // tg.initDataUnsafe.user.username
+    // console.log('username',tg.initDataUnsafe.user.username); 
+    // // tg.themeParams.bg_color
+    // console.log('bg_color',tg.themeParams.bg_color); 
+    // // tg.colorScheme
+    // console.log('colorScheme',tg.colorScheme); 
+    // // tg.initDataUnsafe.auth_date
+    // console.log('auth_date',tg.initDataUnsafe.auth_date); 
+    // // tg.initDataUnsafe.user.id
+    // console.log('id',tg.initDataUnsafe.user.id); 
+    // // tg.platform
+    // console.log('platform',tg.platform); 
 
-    // tg.added_to_attachment_menu
-    console.log('added_to_attachment_menu',tg.added_to_attachment_menu); 
+    // // tg.added_to_attachment_menu
+    // console.log('added_to_attachment_menu',tg.added_to_attachment_menu); 
 
-    console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
-    console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
+    let change = 'undefined';
+    if(tg.initDataUnsafe.user.photo_url != 'undefined'){
+        console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
+    }else {
+        console.log(`photo_url  ${change}`);// undef
+    }
+    // console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
+    // console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
+    // console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
 
-    let a
-    window.Telegram.WebApp.checkHomeScreenStatus(a)
-    console.log('callback',a);
+    // let a
+    // window.Telegram.WebApp.checkHomeScreenStatus(a)
+    // console.log('callback',a);
 
     // console.log(tg.isFullscreen); 
     // tg.requestFullscreen();
