@@ -129,8 +129,8 @@ window.onload = function () {
     }else {
         console.log(`photo_url  ${change}`);// undef
     }
-    // console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
-    // console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
+    console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
+    console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
     // console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
 
     // let a
