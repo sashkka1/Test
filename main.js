@@ -113,25 +113,9 @@ window.onload = function () {
     // // tg.added_to_attachment_menu
     // console.log('added_to_attachment_menu',tg.added_to_attachment_menu); 
 
-    let change = 'undefined';
-    if(tg.initDataUnsafe.user.photo_url != 'undefined'){
-        console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
-    }else {
-        console.log(`photo_url  ${change}`);// undef
-    }
-    if(tg.initDataUnsafe.user.is_bot != 'undefined'){
-        console.log(`photo_url  ${tg.initDataUnsafe.user.is_bot}`);// undef
-    }else {
-        console.log(`photo_url  ${change}`);// undef
-    }
-    if(tg.initDataUnsafe.user.is_premium != 'undefined'){
-        console.log(`photo_url  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    }else {
-        console.log(`photo_url  ${change}`);// undef
-    }
     console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
     console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    // console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
+    console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
 
     // let a
     // window.Telegram.WebApp.checkHomeScreenStatus(a)
