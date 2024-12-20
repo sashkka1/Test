@@ -1,0 +1,343 @@
+/* all html files use this css file */
+
+/* html {
+    background-color: rgb(255, 255, 255); */
+    /* font-family: sans; */
+/* }
+
+#link2index {
+    padding-top: 1em;
+} */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+
+
+main{
+    /* background-color: #0a0; */
+    /* background-color: rgba(0, 128, 0) ; */
+    background: radial-gradient(circle at center, rgb(48, 189, 48), rgb(0, 110, 0)); 
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column; 
+    position: absolute;
+    z-index: 1;
+}
+body {
+    /* height: 100%;   javascript sets height, but that can't make it smaller than this */
+    /* background-color: #0a0;
+    display: flex; */
+    /* height: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(#007B00 1.5px, transparent 1.5px), radial-gradient(#007B00 1.5px, transparent 1.5px);
+	background-size: 22px 22px;
+	background-position: 0 0, 11px 11px;
+	background-color: #008400; */
+
+
+    /* flex-direction: column;
+    justify-content: space-between; */
+    /* transition-property: height;
+    transition-duration: 0.5s; */
+}
+.game-area {
+}
+
+/* Для изменения состояния блоков которые появляются */
+.normal-win{
+    z-index: 100002;
+}
+.normal{
+    z-index: 100001;
+}
+.normal-auto{
+    z-index: 100000;
+}
+.lock{
+    background-color: grey;
+    pointer-events: none;
+}
+
+
+/* Для проверки хочет ли пользователь начать новую игру  */
+.check-desire-box{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: larger;
+}
+.check-desire-box .backk{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* Цвет затемнения с прозрачностью */
+}
+.check-desire{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: rgb(255, 255, 255); 
+    opacity: 1;
+    width: 80%;
+    height: 20%;
+    z-index: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 16px;
+}
+.check-desire-text{
+    /* width: 50%; */
+    /* opacity: 0.7; */
+}
+.check-desire-button-place{
+    display: flex;
+    justify-content: space-around;
+    height: 30%;
+    width: 100%;
+    margin: 2vw;
+}
+.check-desire-button{
+    box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 100%;
+    width: 20%;
+    align-self: center;
+    transition-duration: 0.4s;
+}
+.check-desire-button:active {
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(4px, 4px);
+}
+
+/* Для кнопки автокомплита  */
+.check-autocomplete-button{
+    position: absolute;
+    width: 40vw;
+    height: 7vh;
+    left: 30vw;
+    bottom: 15vh;
+    /* z-index: 3; */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 8px;
+    align-self: center;
+    transition-duration: 0.4s;
+}
+.check-autocomplete-button:active {
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(4px, 4px);
+}
+
+/* .opacity{
+    opacity: 0;
+} */
+
+/* Для блока с кнопками внизу */
+.button-place{
+    display: flex;
+    justify-content: space-around;
+    height: 7%;
+    width: 96vw;
+    align-items: end;
+    position: absolute;
+    bottom: 2%;
+    margin: 2vw;
+    color: black;
+}
+.new-game-button {
+    box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 100%;
+    width: 60%;
+    align-self: center;
+    transition-duration: 0.4s;
+}
+.new-game-button:active {
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(4px, 4px);
+}
+.back-button{
+    height: 7vh;
+    width: 24%;
+    box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+.back-button:active {
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(4px, 4px);
+}
+
+
+/* .status-message {
+    width: 10em;
+    text-align: center;
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0px);
+
+    z-index: 200;
+}
+.status-message {
+    font-size: 2em;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 8px 8px 4px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.status-message.hidden {
+    display: none;
+} */
+
+
+/* Для победного сообщения */
+.win-box{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: larger;
+}
+.win{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: rgb(255, 255, 255); 
+    width: 50%;
+    height: 10%;
+    z-index: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.win-button{
+    box-shadow: 4px 4px 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 50%;
+    width: 60%;
+    align-self: center;
+    transition-duration: 0.4s;
+}
+.win-button:active{
+    transition-duration: 0.4s;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translate(4px, 4px);
+}
+
+
+
+
+/* Для отображение карт */
+.card, .card-place {
+    /* card size is defined in the javascript because it's much easier that way imo */
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.card-place {
+    /* background-color: #090; */
+    /* border: 2px solid #080; */
+    background-color: rgb(1, 135, 3) ;
+    border: 2px solid rgba(0, 16, 0, 0.39);
+
+    /* make sure that these things get "hidden" behind the cards
+       without this, it looks ok on chromium but not on firefox */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* display: flex; */
+    flex-direction: row-reverse;
+    /* transform: translate(50%, -50%); */
+}
+.card-place.invisible{
+    opacity: 0;
+}
+
+.card {
+    /* background-image: url('../materials/Images/Back/back_pattern_1.png'); */
+    background-size: cover;
+    transition-duration: 0.1s;
+}
+.card.visible {
+    /* background-color: aliceblue ; */
+    opacity: 1;
+}
+
+.card.back > div.back{
+    background: url('../materials/Images/Back/back_pattern_1.png');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card.dragging {
+    transition-property: none;
+}
+
+/* .card.ready2drop {
+    border: 5px solid blue;
+} */
+
+/* .card > div {
+    background-image: url('../materials/Images/Back/back_pattern_1.png');
+    display: flex;
+    position: absolute;
+    margin: 3px;
+    font-size: 1.3em;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;   
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+hides everything unless .visible rules override
+.card.visible > div {
+    opacity: 1;
+}
+
+.card div:nth-of-type(2) {
+    right: 0px;
+    bottom: 0px;
+    transform: rotate(180deg);
+}
+
+.card.black.visible > div { color: black; }
+.card.red.visible > div { color: red; } */
+
+
+
