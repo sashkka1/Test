@@ -5,7 +5,7 @@ for(let i=1;i<=30;i++){
     stats[i]= [Math.floor(Math.random() * (20 - 10 + 1)) + 10,Math.floor(Math.random() * (20 - 10 + 1)) + 10,Math.floor(Math.random() * (20 - 10 + 1)) + 10];
 };    
 
-console.log('stats1',stats);
+alert('1');
 // заполняю массив для рисования месячных графиков
 for (let i = 1; i <= 30; i++) {
     arrayGraphExamples.push({
@@ -26,7 +26,7 @@ for (let i = 1; i <= 30; i++) {
         mistake: number,
     });
 }
-console.log('arrayGraphExamples',arrayGraphExamples);
+
 // рисую графики примеров
 new Morris.Line({
     element: 'graph-wrapper-examples',
