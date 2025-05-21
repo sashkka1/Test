@@ -1,136 +1,98 @@
-"use strict";
+let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];   
+let stats = [];
+// если пользователь зашел в новом месяце и сразу посмотрит статистику то она должна быть пустой а не прошлого месяца
+for(let i=1;i<=30;i++){
+    stats[i]= [Math.floor(Math.random() * (20 - 10 + 1)) + 10,Math.floor(Math.random() * (20 - 10 + 1)) + 10,Math.floor(Math.random() * (20 - 10 + 1)) + 10];
+};    
 
+console.log('stats1',stats);
+// заполняю массив для рисования месячных графиков
+for (let i = 1; i <= 30; i++) {
+    arrayGraphExamples.push({
+        day: String(i),
+        examples: stats[i][1],
+    });
+    arrayGraphTime.push({
+        day: String(i),
+        time: (stats[i][0]/60).toFixed(2),
+    });
 
-
-
-
-
-function DontWork(){
-    console.log(`tg.initDataUnsafe.user.is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
-    console.log(`tg.initDataUnsafe.user.is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    console.log(`tg.initDataUnsafe.user.photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
-    console.log(`tg.initDataUnsafe.chat.id  ${tg.initDataUnsafe.chat.id}`);// TypeError: Cannot read properties of undefined
-    console.log(`tg.initDataUnsafe.chat.title  ${tg.initDataUnsafe.chat.title}`);// TypeError: Cannot read properties of undefined
+    let number=0;
+    if(stats[i][2] != 0){
+        number = ((stats[i][1] - stats[i][2])/stats[i][1]).toFixed(2);
+    }
+    arrayGraphMistake.push({
+        day: String(i),
+        mistake: number,
+    });
 }
+console.log('arrayGraphExamples',arrayGraphExamples);
+// рисую графики примеров
+new Morris.Line({
+    element: 'graph-wrapper-examples',
+    data: arrayGraphExamples,
+    xkey: 'day',
+    parseTime: false,
+    ykeys: ['examples'],
+    // hideHover: 'always',
+    labels: ['examples'],
+    lineColors: ['green']
+});
+// рисую графики времени
+new Morris.Line({
+    element: 'graph-wrapper-time',
+    data: arrayGraphTime,
+    xkey: 'day',
+    parseTime: false,
+    ykeys: ['time'],
+    // hideHover: 'always',
+    labels: ['time'],
+    lineColors: ['blue']
+});
+// рисую графики ошибок
+new Morris.Line({
+    element: 'graph-wrapper-mistake',
+    data: arrayGraphMistake,
+    xkey: 'day',
+    parseTime: false,
+    ykeys: ['mistake'],
+    // hideHover: 'always',
+    labels: ['mistake'],
+    lineColors: ['red']
+});
 
-function UseWork() {
-    const tg = window.Telegram.WebApp;
-    tg.initDataUnsafe.user.language_code
-    tg.initDataUnsafe.user.username
-    tg.themeParams.bg_color
-    tg.colorScheme
-    tg.initDataUnsafe.auth_date
-    tg.initDataUnsafe.user.id
-    tg.platform
+// graphToToday('graph-conteiner-examples','graph-wrapper-examples'); // передвигаю на текущую дату
+// graphToToday('graph-conteiner-time','graph-wrapper-time'); 
+// graphToToday('graph-conteiner-mistake','graph-wrapper-mistake');
 
-    let count = localStorage.getItem('count');
-    document.getElementById('notification-count').innerHTML = `Счет ${count}`;
-    count++;
-    localStorage.setItem('count', count);
 
-    let NewName;
-    let Name;
-    document.getElementById('notification-count').innerHTML = `count ${Name}` ;
-    window.Telegram.WebApp.CloudStorage.getItem("count", (err, Name) => {
-        console.log(`вывод 1  ${Name}`);
-        if (!Name) {
-            console.log(`вывод 2  ${Name}`);
-            Name =0;
-        } else{
-            console.log(`вывод 3  ${Name}`);
-            NewName = Name;
-            console.log(`вывод 4  ${NewName}`);
-        Name++;
+
+function graphToToday(one,two){
+    let today = new Date().getDate(); // получаем текущий день месяца
+    let container = document.getElementById(one);
+    let chart = document.getElementById(two);
+
+    // Ждем небольшой интервал, чтобы график точно успел отрисоваться
+    setTimeout(() => {
+        // Найти все подписи по оси X (Morris генерирует их с классом .x-axis-label или подобным)
+        let labels = chart.querySelectorAll('text');
+
+        let targetLabel = null;
+
+        labels.forEach(label => {
+            if (parseInt(label.textContent) === today) {
+            targetLabel = label;
+            }
+        });
+
+        if (targetLabel) {
+            let labelRect = targetLabel.getBoundingClientRect();
+            let containerRect = container.getBoundingClientRect();
+
+            let offsetLeft = labelRect.left + container.scrollLeft - containerRect.left;
+            let centerScroll = offsetLeft - container.clientWidth / 2 + labelRect.width / 2;
+
+            container.scrollLeft = centerScroll;
         }
-        window.Telegram.WebApp.CloudStorage.setItem("count", Name);
-        document.getElementById('notification-count').innerHTML = `count ${Name}` ;
-    });
-
-    tg.expand();
-    tg.disableVerticalSwipes();
-}
-
-async function setItemInCloudStorage() {
-    const timeSlots = [
-        { time: "09:00 AM", available: true },
-        { time: "10:00 AM", available: false },
-        { time: "11:00 AM", available: true }
-    ];
-    let array = 1;
-    console.table(timeSlots);
-    console.table(JSON.stringify(timeSlots));
-    await window.Telegram.WebApp.CloudStorage.setItem('arrayTest', JSON.stringify(timeSlots));
-}
-
-
-async function getItemFromCloudStorage() {
-    await window.Telegram.WebApp.CloudStorage.getItem("arrayTest", (err, storedArray) => {
-        console.log(`вывод 1  ${storedArray}`);
-        console.table(JSON.parse(storedArray));
-        console.log(`вывод 1  ${storedArray[0].time}, вывод 1  ${storedArray[1].available}`);
-    });
-
-}
-
-let block = document.getElementById('set');
-block.addEventListener('click', () => {
-    setItemInCloudStorage();
-});
-block = document.getElementById('get');
-block.addEventListener('click', () => {
-    getItemFromCloudStorage();
-});
-
-    
-
-window.onload = function () {
-    const tg = window.Telegram.WebApp;
-    tg.expand(); // максимум высоты принимает по дэфолту
-    
-    document.getElementById('notificationp').innerHTML = "Test 0";
-    // console.log(`tg.version - ${tg.version}`);
-
-   
-    let localDate = new Date();
-    let utcDate = new Date().toISOString();
-    console.log(localDate);
-    console.log(utcDate);
-    // tg.initDataUnsafe.user.language_code
-    // console.log('language_code',tg.initDataUnsafe.user.language_code); 
-    // // tg.initDataUnsafe.user.username
-    // console.log('username',tg.initDataUnsafe.user.username); 
-    // // tg.themeParams.bg_color
-    // console.log('bg_color',tg.themeParams.bg_color); 
-    // // tg.colorScheme
-    // console.log('colorScheme',tg.colorScheme); 
-    // // tg.initDataUnsafe.auth_date
-    // console.log('auth_date',tg.initDataUnsafe.auth_date); 
-    // // tg.initDataUnsafe.user.id
-    // console.log('id',tg.initDataUnsafe.user.id); 
-    // // tg.platform
-    // console.log('platform',tg.platform); 
-
-    // // tg.added_to_attachment_menu
-    // console.log('added_to_attachment_menu',tg.added_to_attachment_menu); 
-
-    console.log(`is_bot  ${ tg.initDataUnsafe.user.is_bot}`);//undef
-    console.log(`is_premium  ${tg.initDataUnsafe.user.is_premium}`);// undef
-    console.log(`photo_url  ${tg.initDataUnsafe.user.photo_url}`);// undef
-
-    // let a
-    // window.Telegram.WebApp.checkHomeScreenStatus(a)
-    // console.log('callback',a);
-
-    // console.log(tg.isFullscreen); 
-    // tg.requestFullscreen();
-    // console.log(tg.isFullscreen); 
-    // tg.addToHomeScreen();
-    // tg.checkHomeScreenStatus([callback])
-    // console.log('checkHomeScreenStatus',callback);
-    // tg.requestWriteAccess([message]);
-    // console.log('requestWriteAccess',message);
-    // tg.requestContact([message2]);
-    // console.log('requestContact',message2);
-    // tg.showAlert('showAlert');
-    // tg.showConfirm('showConfirm')
+    }, 100);
 }
