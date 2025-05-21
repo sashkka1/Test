@@ -39,7 +39,6 @@ span.statistic{
     justify-content: space-between;
     width: 90vw;
     height: 10vh;
-    /* background-color: bisque; */
 }
 
 .statistic-header .time{color: blue;}
@@ -47,9 +46,7 @@ span.statistic{
 .statistic-header .examples{color: green;}
 
 .statistic-block{
-    /* background-color: beige; */
     width: 100vw;
-    /* height: 88vh; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -67,7 +64,6 @@ span.statistic{
 }
 .graph-wrapper-examples,.graph-wrapper-time,.graph-wrapper-mistake {
     height: 95%;
-    /* height: 25vh; */
     min-width: 1250px;
 }
 
