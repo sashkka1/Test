@@ -107,6 +107,10 @@ window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
     console.log('1',typeof(stats),stats);
     if (stats === null || stats === undefined || stats === "") {
         console.log('1',typeof(stats),stats);
+        stats =[];
+        for(let i=1;i<=daysInMonth;i++){
+            stats[i]= [0,0,0];
+        }; 
     }else{
         let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];   
         stats = JSON.parse(stats);
