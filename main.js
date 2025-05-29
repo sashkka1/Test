@@ -108,7 +108,7 @@ let monthIndex = new Date().getMonth();
 
 
 
-alert('3');
+alert('4');
 
 window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
     let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];
@@ -141,7 +141,9 @@ window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
         });
 
         let number=1;
-        if(stats[i][2] != 0){
+        if(stats[i][2] != 0 && stats[i][1] != 0){
+            number=0;
+        }else if(stats[i][2] != 0){
             number = ((stats[i][1] - stats[i][2])/stats[i][1]).toFixed(2);
         }
         arrayGraphMistake.push({
