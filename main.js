@@ -128,7 +128,7 @@ window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
             };    
         }
     }
-    stats[currentDay]= [72,360,0];
+    stats[currentDay]= [360,36,0];
     // заполняю массив для рисования месячных графиков
     for (let i = 1; i <= daysInMonth; i++) {
         arrayGraphExamples.push({
