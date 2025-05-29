@@ -108,7 +108,7 @@ let monthIndex = new Date().getMonth();
 
 
 
-
+alert('1');
 
 window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
     let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];
