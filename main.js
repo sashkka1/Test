@@ -97,22 +97,26 @@
 //     }, 100);
 // }
 
-let daysInMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
+// Текущий день месяца
+let currentDay = new Date().getDate();
+// Количество дней в текущем месяце
+let daysInMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();   
+// Количество дней в прошлом месяце
+let daysInLastMonth = new Date(new Date().getFullYear(), (new Date().getMonth()-1) + 1, 0).getDate();   
+// индекст текущего месяцы
+let monthIndex = new Date().getMonth();
 
 
 
 
 
 window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
-    console.log('1',typeof(stats),stats);
     let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];
     if (stats === null || stats === undefined || stats === "") {
-        console.log('1',typeof(stats),stats);
         stats =[];
         for(let i=1;i<=daysInMonth;i++){
             stats[i]= [0,0,0];
         }; 
-            console.log('1',typeof(stats),stats);
     }else{   
         stats = JSON.parse(stats);
         console.log('stats1',stats);
@@ -124,7 +128,7 @@ window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
             };    
         }
     }
-
+    stats[currentDay]= [72,360,0];
     // заполняю массив для рисования месячных графиков
     for (let i = 1; i <= daysInMonth; i++) {
         arrayGraphExamples.push({
