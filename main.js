@@ -67,35 +67,35 @@
 
 
 
-// function graphToToday(one,two){
-//     let today = new Date().getDate(); // получаем текущий день месяца
-//     let container = document.getElementById(one);
-//     let chart = document.getElementById(two);
+function graphToToday(one,two){
+    let today = new Date().getDate(); // получаем текущий день месяца
+    let container = document.getElementById(one);
+    let chart = document.getElementById(two);
 
-//     // Ждем небольшой интервал, чтобы график точно успел отрисоваться
-//     setTimeout(() => {
-//         // Найти все подписи по оси X (Morris генерирует их с классом .x-axis-label или подобным)
-//         let labels = chart.querySelectorAll('text');
+    // Ждем небольшой интервал, чтобы график точно успел отрисоваться
+    setTimeout(() => {
+        // Найти все подписи по оси X (Morris генерирует их с классом .x-axis-label или подобным)
+        let labels = chart.querySelectorAll('text');
 
-//         let targetLabel = null;
+        let targetLabel = null;
 
-//         labels.forEach(label => {
-//             if (parseInt(label.textContent) === today) {
-//             targetLabel = label;
-//             }
-//         });
+        labels.forEach(label => {
+            if (parseInt(label.textContent) === today) {
+            targetLabel = label;
+            }
+        });
 
-//         if (targetLabel) {
-//             let labelRect = targetLabel.getBoundingClientRect();
-//             let containerRect = container.getBoundingClientRect();
+        if (targetLabel) {
+            let labelRect = targetLabel.getBoundingClientRect();
+            let containerRect = container.getBoundingClientRect();
 
-//             let offsetLeft = labelRect.left + container.scrollLeft - containerRect.left;
-//             let centerScroll = offsetLeft - container.clientWidth / 2 + labelRect.width / 2;
+            let offsetLeft = labelRect.left + container.scrollLeft - containerRect.left;
+            let centerScroll = offsetLeft - container.clientWidth / 2 + labelRect.width / 2;
 
-//             container.scrollLeft = centerScroll;
-//         }
-//     }, 100);
-// }
+            container.scrollLeft = centerScroll;
+        }
+    }, 100);
+}
 
 // Текущий день месяца
 let currentDay = new Date().getDate();
@@ -108,7 +108,7 @@ let monthIndex = new Date().getMonth();
 
 
 
-alert('1');
+alert('2');
 
 window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
     let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];
