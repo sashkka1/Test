@@ -1,119 +1,119 @@
-*{
-    user-select: none;
-    padding: 0;
-    margin: 0;
-    border: 0;
+* {
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
-
-body{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* background-color: #0000ff; */
 }
 
-
-
-
-.statistic-icon{
-    height: 7vh;
-    aspect-ratio: 1 / 1;
+.statistic-icon {
+  height: 7vh;
+  aspect-ratio: 1 / 1;
 }
-span.statistic{
-    font-size: 7vh;
+span.statistic {
+  font-size: 7vh;
 }
 
-.statistic{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.statistic {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.statistic-header{
-    position: relative;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90vw;
-    height: 10vh;
+.statistic-header {
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  height: 10vh;
 }
 
-.statistic-header .time{color: blue;}
-.statistic-header .mistake{color: red;}
-.statistic-header .examples{color: green;}
+.statistic-header .time {
+  color: blue;
+}
+.statistic-header .mistake {
+  color: red;
+}
+.statistic-header .examples {
+  color: green;
+}
 
-.statistic-block{
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
+.statistic-block {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .graph-conteiner {
-    height: 28vh;
-    width: 90vw;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    overflow: auto;
-    scrollbar-width: none;       /* Firefox */
-    -ms-overflow-style: none; 
-    margin-bottom: 2vh;
+  height: 28vh;
+  width: 90vw;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  margin-bottom: 2vh;
 }
-.graph-wrapper-examples,.graph-wrapper-time,.graph-wrapper-mistake {
-    height: 95%;
-    min-width: 1250px;
-}
-
-.statistic{
-    color: rgb(28, 170, 231);
+.graph-wrapper-examples,
+.graph-wrapper-time,
+.graph-wrapper-mistake {
+  height: 95%;
+  min-width: 1250px;
 }
 
-
-
-
-
-
-
+.statistic {
+  color: rgb(28, 170, 231);
+}
 
 @media (min-width: 992px) {
-    .cssmain1{
-        font-size: 2vw;
-    }
-    .cssmain2{
-        font-size: 3vw;
-    }
-    .forPSize,.statistic p{
-        font-size: 2vw;
-    }
-    span.home{
-        font-size: 10vh;
-    }
-    span.keyboard-circle{
-        font-size: 5vw;
-    }
+  .cssmain1 {
+    font-size: 2vw;
+  }
+  .cssmain2 {
+    font-size: 3vw;
+  }
+  .forPSize,
+  .statistic p {
+    font-size: 2vw;
+  }
+  span.home {
+    font-size: 10vh;
+  }
+  span.keyboard-circle {
+    font-size: 5vw;
+  }
 }
 @media (max-width: 992px) {
-    .cssmain1{
-        font-size: 3vw;
-    }
-    .cssmain2{
-        font-size: 4vw;
-    }
-    .forPSize,.statistic p{
-        font-size: 2.5vw;
-    }
-    span.home{
-        font-size: 10vh;
-    }
-    span.keyboard-circle{
-        font-size: 5vw;
-    }
+  .cssmain1 {
+    font-size: 3vw;
+  }
+  .cssmain2 {
+    font-size: 4vw;
+  }
+  .forPSize,
+  .statistic p {
+    font-size: 2.5vw;
+  }
+  span.home {
+    font-size: 10vh;
+  }
+  span.keyboard-circle {
+    font-size: 5vw;
+  }
 }
 @media (max-width: 780px) {
-    /* .cssmain1{
+  /* .cssmain1{
         font-size: 4vw;
     }
     .cssmain2{
@@ -130,59 +130,62 @@ span.statistic{
     } */
 }
 @media (max-width: 650px) {
-    .cssmain1{
-        font-size: 5vw;
-    }
-    .cssmain2{
-        font-size: 6vw;
-    }
-    .forPSize,.statistic p{
-        font-size: 4vw;
-    }
-    span.home{
-        font-size: 10vh;
-    }
-    span.keyboard-circle{
-        font-size: 8vw;
-    }
+  .cssmain1 {
+    font-size: 5vw;
+  }
+  .cssmain2 {
+    font-size: 6vw;
+  }
+  .forPSize,
+  .statistic p {
+    font-size: 4vw;
+  }
+  span.home {
+    font-size: 10vh;
+  }
+  span.keyboard-circle {
+    font-size: 8vw;
+  }
 }
 @media (max-width: 570px) {
-    .cssmain1{
-        font-size: 6vw;
-    }
-    .cssmain2{
-        font-size: 7vw;
-    }
-    .forPSize,.statistic p{
-        font-size: 4.5vw;
-    }
-    .choice input{
-        width: 6vw;
-    }
-    span.home{
-        font-size: 9vh;
-    }
-    span.keyboard-circle{
-        font-size: 9vw;
-    }
+  .cssmain1 {
+    font-size: 6vw;
+  }
+  .cssmain2 {
+    font-size: 7vw;
+  }
+  .forPSize,
+  .statistic p {
+    font-size: 4.5vw;
+  }
+  .choice input {
+    width: 6vw;
+  }
+  span.home {
+    font-size: 9vh;
+  }
+  span.keyboard-circle {
+    font-size: 9vw;
+  }
 }
 @media (max-width: 400px) {
-    .cssmain1{
-        font-size: 6.5vw;
-    }
-    .cssmain2{
-        font-size: 8vw;
-    }
-    .forPSize,.statistic p{
-        font-size: 5.5vw;
-    }
-    .choice input{
-        width: 7vw;
-    }
-    span.home{
-        font-size: 8vh;
-    }
-    span.keyboard-circle{
-        font-size: 10vw;
-    }
+  .cssmain1 {
+    font-size: 6.5vw;
+  }
+  .cssmain2 {
+    font-size: 8vw;
+  }
+  .forPSize,
+  .statistic p {
+    font-size: 5.5vw;
+  }
+  .choice input {
+    width: 7vw;
+  }
+  span.home {
+    font-size: 8vh;
+  }
+  span.keyboard-circle {
+    font-size: 10vw;
+  }
 }

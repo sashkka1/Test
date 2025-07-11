@@ -108,7 +108,7 @@ let monthIndex = new Date().getMonth();
 
 
 
-alert('5');
+alert('6');
 
 window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
     let arrayGraphExamples = [], arrayGraphTime = [], arrayGraphMistake = [];
@@ -119,7 +119,6 @@ window.Telegram.WebApp.CloudStorage.getItem("stats1", (err, stats) => {
         }; 
     }else{   
         stats = JSON.parse(stats);
-        console.log('stats1',stats);
         // если пользователь зашел в новом месяце и сразу посмотрит статистику то она должна быть пустой а не прошлого месяца
         if(stats[0]!= monthIndex){
             window.Telegram.WebApp.CloudStorage.setItem("oldstats", JSON.stringify(stats));
